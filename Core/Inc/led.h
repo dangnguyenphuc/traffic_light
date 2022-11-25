@@ -29,4 +29,11 @@ void setYellow(int index);
  */
 void setGreen(int index);
 
+
+/*
+ * set Pedestrian light on or off depend on value:
+ * 		if value == 0 then off otherwise on.
+ */
+void setPedestrian(int value);
+
 #endif /* INC_LED_H_ */
