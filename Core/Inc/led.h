@@ -36,4 +36,6 @@ void setGreen(int index);
  */
 void setPedestrian(int value);
 
+void clearLED(int index);
+
 #endif /* INC_LED_H_ */

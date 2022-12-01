@@ -27,13 +27,13 @@ static int counterForButtonPressed1s[NO_OF_BUTTONS]= 	{0,0,0,0};
 GPIO_PinState iKeyInput(int index){
 	switch(index){
 	case 0:
-//		return HAL_GPIO_ReadPin();
+		return HAL_GPIO_ReadPin(A0_GPIO_Port,A0_Pin);
 	case 1:
-//		return HAL_GPIO_ReadPin();
+		return HAL_GPIO_ReadPin(A1_GPIO_Port,A1_Pin);
 	case 2:
-//		return HAL_GPIO_ReadPin();
+		return HAL_GPIO_ReadPin(A2_GPIO_Port,A2_Pin);
 	case 3:
-//		return HAL_GPIO_ReadPin();
+		return HAL_GPIO_ReadPin(A3_GPIO_Port, A3_Pin);
 	default:
 		return NORMAL_STATE;
 	}
@@ -82,18 +82,18 @@ unsigned char is_button_pressed(unsigned char button_number){
 			flagForButtonPressed[button_number] = 0;
 			return 1;
 		}
-		return 0;
+		return 0;33
 	}
 }
 unsigned char is_button_pressed_1s(unsigned char button_number){
 	if(button_number >= NO_OF_BUTTONS) return 0xff;
 	else {
-			if(flagForButtonPressed1s[button_number] == 1){
-				flagForButtonPressed1s[button_number] = 0;
-				return 1;
-			}
-			return 0;
+		if(flagForButtonPressed1s[button_number] == 1){
+			flagForButtonPressed1s[button_number] = 0;
+			return 1;
 		}
+		return 0;
+	}
 }
 
 
