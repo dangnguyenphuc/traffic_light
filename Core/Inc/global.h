@@ -13,6 +13,7 @@
 #include "software_timer.h"
 #include "led.h"
 
+extern int counter;
 
 extern int status;
 

@@ -6,149 +6,162 @@
  */
 
 #include "scheduler.h"
-#include "led.h"
 
-sTasks SCH_tasks_G[SCH_MAX_TASKS];
-uint8_t current_index_task = 0;
-unsigned char Error_code_G = 0;
-unsigned char Last_Error_code_G = 0;
-unsigned int Error_tick_count_G;
-unsigned int Error_Port;
-char flag_task_completed[SCH_MAX_TASKS];
-
-void none_task(){
-	return;
-}
-
-#define ERROR_SCH_INVALID_INDEX								1
-#define ERROR_SCH_TOO_MANY_TASKS 							2
-#define ERROR_SCH_WAITING_FOR_SLAVE_TO_ACK 					3
-#define ERROR_SCH_WAITING_FOR_START_COMMAND_FROM_MASTER 	4
-#define ERROR_SCH_ONE_OR_MORE_SLAVES_DID_NOT_START 			5
-#define ERROR_SCH_LOST_SLAVE 								6
-#define ERROR_SCH_CAN_BUS_ERROR 							7
-#define ERROR_I2C_WRITE_BYTE_AT24C64 						8
+//  ======================
+Task sTask[SCH_MAX_TASKS];
+int len;
+int head;
+int tail;
+int cur_index;
+uint32_t head_index_update;
+//  ======================
 
 void SCH_Init(){
 
-	clearLED();
-	clearLight();
+	cur_index = 0;
+	len = 0;
+	head = 0;
+	cur_index = 0;
+	tail = 0;
 
-	for(int i=0; i<SCH_MAX_TASKS;i+=1){
-		flag_task_completed[i] = 0;
-	}
-	current_index_task = 0;
+	clearLED(0);
+	clearLED(1);
+
 }
 
-void SCH_Add_Task ( void (*pFunction)() , uint32_t DELAY, uint32_t PERIOD, uint8_t one_shot = 0){
-	if(current_index_task < SCH_MAX_TASKS){
+void SCH_Add_Task( void (*pFunction)() , uint32_t DELAY, uint32_t PERIOD){
 
-		SCH_tasks_G[current_index_task].pTask = pFunction;
-		SCH_tasks_G[current_index_task].Delay = DELAY;
-		SCH_tasks_G[current_index_task].Period =  PERIOD;
-		SCH_tasks_G[current_index_task].RunMe = 0;
-//		SCH_tasks_G[current_index_task].TaskID = current_index_task; //using to delete task
+	if(len<SCH_MAX_TASKS){
 
-		current_index_task+=1;
-	}else{
-		Error_code_G = ERROR_SCH_TOO_MANY_TASKS;
-		// if this happen then remove current index and replace it by new task.
-		current_index_task-=1;
-		SCH_Delete_Task(current_index_task);
-		SCH_tasks_G[current_index_task].pTask = pFunction;
-		SCH_tasks_G[current_index_task].Delay = DELAY;
-		SCH_tasks_G[current_index_task].Period =  PERIOD;
-		SCH_tasks_G[current_index_task].RunMe = 0;
+        if(len == 0){
+
+            sTask[0].pTask = pFunction;
+            sTask[0].Delay = DELAY;
+            sTask[0].Period = PERIOD;
+            sTask[0].RunMe = 0;
+
+            cur_index = 0;
+
+        }else{
+            //counter
+            int i, j;
+
+    	    if(DELAY >= sTask[cur_index].Delay){
+
+                for(i=cur_index;i<tail && DELAY >= sTask[i].Delay;i+=1);
+
+                //new tail
+                if( i==tail && DELAY >= sTask[i].Delay ){
+                    sTask[i+1].pTask = pFunction;
+                    sTask[i+1].Delay = DELAY;
+                    sTask[i+1].Period = PERIOD;
+                    sTask[i+1].RunMe = 0;
+                    cur_index = tail;
+
+                }
+                else{
+                    for(j = len; j>i ; j-=1){
+                        sTask[j] = sTask[j-1];
+                    }
+
+                    sTask[i].pTask = pFunction;
+                    sTask[i].Delay = DELAY;
+                    sTask[i].Period = PERIOD;
+                    sTask[i].RunMe = 0;
+                    cur_index = i;
+                }
+
+    	    }else{
+                // printf("dang");
+    	        for(i=cur_index; i>head && DELAY < sTask[i].Delay; i-=1);
+
+                //new head
+                if( i==head && DELAY < sTask[i].Delay ){
+
+                    for(j = len; j>head ; j-=1){
+                        sTask[j] = sTask[j-1];
+                    }
+
+                    sTask[0].pTask = pFunction;
+                    sTask[0].Delay = DELAY;
+                    sTask[0].Period = PERIOD;
+                    sTask[0].RunMe = 0;
+                    cur_index = 0;
+                }
+                else{
+                    for(j = len; j>i+1 ; j-=1){
+                        sTask[j] = sTask[j-1];
+                    }
+
+                    i += 1;
+
+                    sTask[i].pTask = pFunction;
+                    sTask[i].Delay = DELAY;
+                    sTask[i].Period = PERIOD;
+                    sTask[i].RunMe = 0;
+                    cur_index =i;
+                }
+
+    	    }
+        }
+
+        tail = len;
+	    // Adding len
+        len += 1;
+
 	}
+
 }
 
-void SCH_Delete_Task(uint32_t task_ID){
-	if(task_ID > SCH_MAX_TASKS || task_ID > current_index_task){
-		Error_code_G = ERROR_SCH_INVALID_INDEX;
-		return;
-	}
+void SCH_Delete_Then_Add_Task(){
 
-	if(task_ID < 0 ){
-		Error_code_G = ERROR_SCH_INVALID_INDEX;
-		return;
-	}
-	if(task_ID < current_index_task){
-		for(int i = 0; i < current_index_task-1; i+=1){
-			SCH_tasks_G[i].pTask = SCH_tasks_G[i+1].pTask;
-			SCH_tasks_G[i].Delay = SCH_tasks_G[i+1].Delay;
-			SCH_tasks_G[i].Period = SCH_tasks_G[i+1].Period;
-			SCH_tasks_G[i].RunMe = SCH_tasks_G[i+1].RunMe;
+		Task temp = sTask[0];
+		for(int i = 0; i<len-1; i+=1){
+		    sTask[i] = sTask[i+1];
 		}
-	}
-		SCH_tasks_G[current_index_task].pTask = none_task;
-		SCH_tasks_G[current_index_task].Delay = 0;
-		SCH_tasks_G[current_index_task].Period =  0;
-		SCH_tasks_G[current_index_task].RunMe = 0;
-		current_index_task-=1;
+		len -= 1;
+		tail -= 1;
+
+		SCH_Add_Task(temp.pTask, temp.Delay + temp.Period, temp.Period);
+
 }
+
 
 void SCH_Update(void) {
-	for (int i = 0; i < current_index_task; i+=1 ) {
-			if (SCH_tasks_G[i].Delay > 0) {
-				SCH_tasks_G[i].Delay -= 1;
-			} else {
-				// periodic
-				SCH_tasks_G[i].Delay = SCH_tasks_G[i].Period;
-				flag_task_completed[i] += 1;
-				SCH_tasks_G[i].RunMe += 1;
-			}
+
+	head_index_update = 0;
+	while(counter >= sTask[head_index_update].Delay){
+		sTask[head_index_update].RunMe += 1;
+		head_index_update += 1;
 	}
+
+	counter+=1;
 }
-
+//
 void SCH_Dispatch_Tasks(void) {
-	for (int i = 0; i < current_index_task; ++i) {
-		if (SCH_tasks_G[i].RunMe > 0) {
-			SCH_tasks_G[i].RunMe -= 1;
-			(*SCH_tasks_G[i].pTask)();
+for (int i = 0; i < len; i+=1 ) {
+		if (sTask[i].RunMe > 0) {
+			sTask[i].RunMe -= 1;
+			(*sTask[i].pTask)();
 
-			//delete if task is on-shot type.
-//			if(flag_task_completed[i]){
-//				flag_task_completed[i] = 0;
-//				SCH_Delete_Task(i);
-//			}
+			SCH_Delete_Then_Add_Task();
 		}
 	}
-	SCH_Report_Status();
-	SCH_Go_to_Sleep();
+//	SCH_Report_Status();
+//	SCH_Go_to_Sleep();
 }
-
+//
 void SCH_Go_to_Sleep(){
 	// TODO: none
 	// It do nothing until the next task executed
 
 	char flag = 0;
 	while(!flag){
-		for (int i = 0; i < current_index_task; i+=1 ) {
-				if (flag_task_completed[i]) {
+		for (int i = 0; i < len; i+=1 ) {
+				if (sTask[i].RunMe) {
 					flag = 1;
 					break;
 				}
 		}
 	}
 }
-
-void SCH_Report_Status(){
-	if(Error_code_G != Last_Error_code_G){
-		Error_Port = 255 - Error_code_G;
-		Last_Error_code_G = Error_code_G;
-		if(Error_code_G != 0){
-			Error_tick_count_G = 600000;
-		}
-		else{
-			Error_tick_count_G = 0;
-		}
-	}
-	else{
-		if(Error_tick_count_G != 0 ){
-			if(--Error_tick_count_G == 0){
-				Error_code_G = 0;
-			}
-		}
-	}
-}
-

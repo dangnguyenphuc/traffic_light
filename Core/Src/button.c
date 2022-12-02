@@ -12,7 +12,7 @@
 #define PRESSED_STATE						GPIO_PIN_RESET
 #define NORMAL_STATE						GPIO_PIN_SET
 
-static GPIO_PinState buttonBuffer[NO_OF_BUTTONS] = {NORMAL_STATE,NORMAL_STATE,NORMAL_STATE};
+static GPIO_PinState buttonBuffer[NO_OF_BUTTONS] = {NORMAL_STATE,NORMAL_STATE,NORMAL_STATE,NORMAL_STATE};
 
 static GPIO_PinState debounceButtonBuffer1[NO_OF_BUTTONS];
 static GPIO_PinState debounceButtonBuffer2[NO_OF_BUTTONS];
@@ -82,7 +82,7 @@ unsigned char is_button_pressed(unsigned char button_number){
 			flagForButtonPressed[button_number] = 0;
 			return 1;
 		}
-		return 0;33
+		return 0;
 	}
 }
 unsigned char is_button_pressed_1s(unsigned char button_number){

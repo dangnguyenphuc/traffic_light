@@ -8,6 +8,8 @@
 
 #include "global.h"
 
+int counter = 0;
+
 int status = AUTO_INIT;
 
 int red_time = RED_TIME;

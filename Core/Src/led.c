@@ -98,7 +98,7 @@ void setGreen(int index){
 }
 
 void setPedestrian(int value){
-	switch(index){
+	switch(value){
 		case 0:
 
 			break;

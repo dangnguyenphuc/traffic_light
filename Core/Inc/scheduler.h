@@ -9,15 +9,15 @@
 #define INC_SCHEDULER_H_
 
 #include <stdint.h>
+#include "global.h"
 
-
-typedef struct{
+typedef struct {
 	void (*pTask)(void);
 	uint32_t 	Delay;
-	uint32_t 	Period;
-	uint8_t 	RunMe;
-	uint32_t 	TaskID;
-}sTasks;
+	int 	Period;
+	int 	RunMe;
+	int 	counter;
+}Task;
 
 #define SCH_MAX_TASKS	30
 

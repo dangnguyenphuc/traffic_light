@@ -10,7 +10,7 @@
 
 void fsm_automatic_run(){
 	switch(status){
-		case INIT:
+		case AUTO_INIT:
 			// TODO:
 			clearLED(3);	// clear 2 traffic Lights
 

@@ -1,0 +1,162 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+#define SCH_MAX_TASKS 30
+void none(){
+    
+}
+
+typedef struct {
+	void (*pTask)(void);
+	int 	Delay;
+	int 	Period;
+	int 	RunMe;
+	int 	counter;
+}Task;
+
+//  ======================
+Task sTask[SCH_MAX_TASKS];
+int len;
+int head;
+int tail;
+int cur_index;
+//  ======================
+
+void SCH_Init(){
+
+	cur_index = 0;
+	len = 0;
+	head = 0;
+	cur_index = 0;
+	tail = 0;
+
+	//clearLED(0);
+	//clearLED(1);
+
+}
+
+void SCH_Add_Task ( void (*pFunction)() , int DELAY, int PERIOD){
+	
+	if(len<SCH_MAX_TASKS){
+        
+        if(len == 0){
+            
+            sTask[0].pTask = pFunction;
+            sTask[0].Delay = DELAY;
+            sTask[0].Period = PERIOD;
+            sTask[0].RunMe = 0;
+            sTask[0].counter = DELAY;
+            
+            cur_index = 0;
+            
+        }else{
+            //counter
+            int i, j;
+            
+    	    if(DELAY >= sTask[cur_index].Delay){
+    
+                for(i=cur_index;i<tail && DELAY >= sTask[i].Delay;i+=1);
+                printf("tail >=: %d\n",tail);
+                //new tail
+                if( i==tail && DELAY >= sTask[i].Delay ){
+                    sTask[i+1].pTask = pFunction;
+                    sTask[i+1].Delay = DELAY;
+                    sTask[i+1].Period = PERIOD;
+                    sTask[i+1].RunMe = 0;
+                    sTask[i+1].counter = DELAY;
+                    tail = i+1;
+                    cur_index = tail;
+                }
+                else{
+                    for(j = len; j>i+1 ; j-=1){
+                        sTask[j] = sTask[j-1];
+                        printf("dang I >=: %d\n",j);
+                    }
+                    
+                    sTask[i].pTask = pFunction;
+                    sTask[i].Delay = DELAY;
+                    sTask[i].Period = PERIOD;
+                    sTask[i].RunMe = 0;
+                    sTask[i].counter = DELAY;
+                    cur_index = i;
+                }
+    
+    	    }else{
+                // printf("dang");
+    	        for(i=cur_index; i>head && DELAY < sTask[i].Delay; i-=1);
+
+                //new head
+                if( i==head && DELAY < sTask[i].Delay ){
+                    
+                    for(j = len; j>head ; j-=1){
+                        sTask[j] = sTask[j-1];
+                    }
+                    
+                    sTask[0].pTask = pFunction;
+                    sTask[0].Delay = DELAY;
+                    sTask[0].Period = PERIOD;
+                    sTask[0].RunMe = 0;
+                    sTask[0].counter = DELAY;
+                    cur_index = 0;
+                }
+                else{
+                    for(j = len; j>i+1 ; j-=1){
+                        sTask[j] = sTask[j-1];
+                    }
+                    
+                    i += 1;
+                    
+                    sTask[i].pTask = pFunction;
+                    sTask[i].Delay = DELAY;
+                    sTask[i].Period = PERIOD;
+                    sTask[i].RunMe = 0;
+                    sTask[i].counter = DELAY;
+                    cur_index =i;
+                }
+    
+    	    }
+        }
+	    // Adding len
+        len += 1;
+	    
+	}
+	    
+}
+
+void SCH_Delete_Task(){
+    
+		
+}
+
+void SCH_Update(void) {
+	
+}
+
+
+int main()
+{
+    SCH_Add_Task(none, 2000, 5000);
+    SCH_Add_Task(none, 1000, 5000);
+    
+    SCH_Add_Task(none, 1500, 5000);
+    // SCH_Add_Task(none, 500, 5000);
+    // SCH_Add_Task(none, 3000, 5000);
+    // SCH_Add_Task(none, 2000, 5000);
+    // SCH_Add_Task(none, 1200, 5000);
+
+
+    for(int i = 0;i < len;i+=1){
+        printf("%d\t ",sTask[i].Delay);
+    }
+
+
+    printf("\nLen: %d", len);
+    return 0;
+}
