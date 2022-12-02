@@ -29,11 +29,11 @@ GPIO_PinState iKeyInput(int index){
 	case 0:
 		return HAL_GPIO_ReadPin(A0_GPIO_Port,A0_Pin);
 	case 1:
-		return HAL_GPIO_ReadPin(A1_GPIO_Port,A1_Pin);
+		return HAL_GPIO_ReadPin(A1_MAN_GPIO_Port,A1_MAN_Pin);
 	case 2:
-		return HAL_GPIO_ReadPin(A2_GPIO_Port,A2_Pin);
+		return HAL_GPIO_ReadPin(A2_TUNING_GPIO_Port,A2_TUNING_Pin);
 	case 3:
-		return HAL_GPIO_ReadPin(A3_GPIO_Port, A3_Pin);
+		return HAL_GPIO_ReadPin(A3_SET_GPIO_Port, A3_SET_Pin);
 	default:
 		return NORMAL_STATE;
 	}
