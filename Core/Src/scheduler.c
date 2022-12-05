@@ -7,13 +7,15 @@
 
 #include "scheduler.h"
 
+
+#define TICK			10
+
 //  ======================
 Task sTask[SCH_MAX_TASKS];
 int len;
 int head;
 int tail;
 int cur_index;
-uint32_t head_index_update;
 //  ======================
 
 void SCH_Init(){
@@ -36,8 +38,8 @@ void SCH_Add_Task( void (*pFunction)() , uint32_t DELAY, uint32_t PERIOD){
         if(len == 0){
 
             sTask[0].pTask = pFunction;
-            sTask[0].Delay = DELAY;
-            sTask[0].Period = PERIOD;
+            sTask[0].Delay = DELAY/TICK;
+            sTask[0].Period = PERIOD/TICK;
             sTask[0].RunMe = 0;
 
             cur_index = 0;
@@ -48,13 +50,13 @@ void SCH_Add_Task( void (*pFunction)() , uint32_t DELAY, uint32_t PERIOD){
 
     	    if(DELAY >= sTask[cur_index].Delay){
 
-                for(i=cur_index;i<tail && DELAY >= sTask[i].Delay;i+=1);
+                for(i=cur_index;i<tail && DELAY/TICK >= sTask[i].Delay;i+=1);
 
                 //new tail
                 if( i==tail && DELAY >= sTask[i].Delay ){
                     sTask[i+1].pTask = pFunction;
-                    sTask[i+1].Delay = DELAY;
-                    sTask[i+1].Period = PERIOD;
+                    sTask[i+1].Delay = DELAY/TICK;
+                    sTask[i+1].Period = PERIOD/TICK;
                     sTask[i+1].RunMe = 0;
                     cur_index = tail;
 
@@ -65,26 +67,26 @@ void SCH_Add_Task( void (*pFunction)() , uint32_t DELAY, uint32_t PERIOD){
                     }
 
                     sTask[i].pTask = pFunction;
-                    sTask[i].Delay = DELAY;
-                    sTask[i].Period = PERIOD;
+                    sTask[i].Delay = DELAY/TICK;
+                    sTask[i].Period = PERIOD/TICK;
                     sTask[i].RunMe = 0;
                     cur_index = i;
                 }
 
     	    }else{
                 // printf("dang");
-    	        for(i=cur_index; i>head && DELAY < sTask[i].Delay; i-=1);
+    	        for(i=cur_index; i>head && DELAY/TICK < sTask[i].Delay; i-=1);
 
                 //new head
-                if( i==head && DELAY < sTask[i].Delay ){
+                if( i==head && DELAY/TICK < sTask[i].Delay ){
 
                     for(j = len; j>head ; j-=1){
                         sTask[j] = sTask[j-1];
                     }
 
                     sTask[0].pTask = pFunction;
-                    sTask[0].Delay = DELAY;
-                    sTask[0].Period = PERIOD;
+                    sTask[0].Delay = DELAY/TICK;
+                    sTask[0].Period = PERIOD/TICK;
                     sTask[0].RunMe = 0;
                     cur_index = 0;
                 }
@@ -96,8 +98,8 @@ void SCH_Add_Task( void (*pFunction)() , uint32_t DELAY, uint32_t PERIOD){
                     i += 1;
 
                     sTask[i].pTask = pFunction;
-                    sTask[i].Delay = DELAY;
-                    sTask[i].Period = PERIOD;
+                    sTask[i].Delay = DELAY/TICK;
+                    sTask[i].Period = PERIOD/TICK;
                     sTask[i].RunMe = 0;
                     cur_index =i;
                 }
@@ -129,7 +131,7 @@ void SCH_Delete_Then_Add_Task(){
 
 void SCH_Update(void) {
 
-	head_index_update = 0;
+	int head_index_update = 0;
 	while(counter >= sTask[head_index_update].Delay){
 		sTask[head_index_update].RunMe += 1;
 		head_index_update += 1;
@@ -139,13 +141,10 @@ void SCH_Update(void) {
 }
 //
 void SCH_Dispatch_Tasks(void) {
-for (int i = 0; i < len; i+=1 ) {
-		if (sTask[i].RunMe > 0) {
-			sTask[i].RunMe -= 1;
-			(*sTask[i].pTask)();
-
-			SCH_Delete_Then_Add_Task();
-		}
+	while(sTask[0].RunMe){
+	    sTask[0].RunMe -= 1;
+	    (*sTask[0].pTask)();
+	    SCH_Delete_Then_Add_Task();
 	}
 //	SCH_Report_Status();
 //	SCH_Go_to_Sleep();

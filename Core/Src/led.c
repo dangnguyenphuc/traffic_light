@@ -97,16 +97,28 @@ void setGreen(int index){
 	}
 }
 
+
+/*
+ * @param: value
+ * 			0:	RED
+ * 			1: 	GREEN
+ */
 void setPedestrian(int value){
 	switch(value){
 		case 0:
+			HAL_GPIO_WritePin(D6_PEDESTRIAN_GPIO_Port, D6_PEDESTRIAN_Pin, GPIO_PIN_SET);
 
+			HAL_GPIO_WritePin(D7_PEDESTRIAN_GPIO_Port, D7_PEDESTRIAN_Pin, GPIO_PIN_RESET);
 			break;
 		case 1:
+			HAL_GPIO_WritePin(D6_PEDESTRIAN_GPIO_Port, D6_PEDESTRIAN_Pin, GPIO_PIN_RESET);
 
+			HAL_GPIO_WritePin(D7_PEDESTRIAN_GPIO_Port, D7_PEDESTRIAN_Pin, GPIO_PIN_SET);
 			break;
 		default:
+			HAL_GPIO_WritePin(D6_PEDESTRIAN_GPIO_Port, D6_PEDESTRIAN_Pin, GPIO_PIN_RESET);
 
+			HAL_GPIO_WritePin(D7_PEDESTRIAN_GPIO_Port, D7_PEDESTRIAN_Pin, GPIO_PIN_RESET);
 
 			break;
 	}

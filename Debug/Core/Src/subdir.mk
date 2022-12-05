@@ -8,6 +8,7 @@ C_SRCS += \
 ../Core/Src/button.c \
 ../Core/Src/fsm_automatic.c \
 ../Core/Src/fsm_manual.c \
+../Core/Src/fsm_pedestrian.c \
 ../Core/Src/fsm_tuning.c \
 ../Core/Src/global.c \
 ../Core/Src/led.c \
@@ -24,6 +25,7 @@ OBJS += \
 ./Core/Src/button.o \
 ./Core/Src/fsm_automatic.o \
 ./Core/Src/fsm_manual.o \
+./Core/Src/fsm_pedestrian.o \
 ./Core/Src/fsm_tuning.o \
 ./Core/Src/global.o \
 ./Core/Src/led.o \
@@ -40,6 +42,7 @@ C_DEPS += \
 ./Core/Src/button.d \
 ./Core/Src/fsm_automatic.d \
 ./Core/Src/fsm_manual.d \
+./Core/Src/fsm_pedestrian.d \
 ./Core/Src/fsm_tuning.d \
 ./Core/Src/global.d \
 ./Core/Src/led.d \
