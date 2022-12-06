@@ -33,9 +33,11 @@ extern int status_pedestrian;
 #define AUTO_YELLOW2 		12
 
 // states of MANUAL FSM:
-#define MAN_RED				21
-#define MAN_GREEN			22
-#define MAN_YELLOW			23
+#define MAN_GREEN1			21
+#define MAN_YELLOW1			22
+
+#define MAN_GREEN2			23
+#define MAN_YELLOW2			24
 
 // states of TUNING FSM
 #define TUNING_RED			31
