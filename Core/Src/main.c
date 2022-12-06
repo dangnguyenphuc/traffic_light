@@ -65,13 +65,13 @@ static void MX_USART2_UART_Init(void);
 void sendingUART(){
 	if(timer2_flag){
 		if(!timer3_flag){
-			HAL_UART_Transmit(&huart2, (void *)buffer_tx, sprintf (buffer_tx,"!7SEG:%d:LIGHT1#", timer3_counter), 1000);
+			HAL_UART_Transmit(&huart2, (void *)buffer_tx, sprintf (buffer_tx,"!7SEG:%d:LIGHT1#", timer3_counter / 1000), 1000);
 		}else{
 			HAL_UART_Transmit(&huart2, (void *)buffer_tx, sprintf (buffer_tx,"!7SEG:DELAY:LIGHT1#"), 1000);
 		}
 
 		if(!timer4_flag){
-			HAL_UART_Transmit(&huart2, (void *)buffer_tx, sprintf (buffer_tx,"!7SEG:%d:LIGHT2#", timer4_counter), 1000);
+			HAL_UART_Transmit(&huart2, (void *)buffer_tx, sprintf (buffer_tx,"!7SEG:%d:LIGHT2#", timer4_counter / 1000), 1000);
 		}else{
 			HAL_UART_Transmit(&huart2, (void *)buffer_tx, sprintf (buffer_tx,"!7SEG:DELAY:LIGHT2#"), 1000);
 		}
