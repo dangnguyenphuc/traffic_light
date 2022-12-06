@@ -91,7 +91,7 @@ void Buzzer(){
 			setTimer5(buzzer_time);
 		}
 	}
-	__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 0);
+	else __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 0);
 }
 /* USER CODE END 0 */
 

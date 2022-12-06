@@ -14,10 +14,10 @@ void fsm_tuning_run(){
 		case TUNING_RED:
 			// TODO:
 			if(is_button_pressed(3)){
-				red_time += 1;
+				red_time += 500;
 			}
 			if(is_button_pressed_1s(3)){
-				red_time -= 1;
+				red_time -= 500;
 			}
 
 			red_time_2 = red_time;
@@ -46,10 +46,10 @@ void fsm_tuning_run(){
 		case TUNING_YELLOW:
 			// TODO:
 			if(is_button_pressed(3)){
-				yellow_time += 1;
+				yellow_time += 500;
 			}
 			if(is_button_pressed_1s(3)){
-				yellow_time -= 1;
+				yellow_time -= 500;
 			}
 
 			yellow_time_2 = yellow_time;
@@ -77,10 +77,10 @@ void fsm_tuning_run(){
 		case TUNING_GREEN:
 			// TODO:
 			if(is_button_pressed(3)){
-				green_time += 1;
+				green_time += 500;
 			}
 			if(is_button_pressed_1s(3)){
-				green_time -= 1;
+				green_time -= 500;
 			}
 
 			green_time_2 = green_time;

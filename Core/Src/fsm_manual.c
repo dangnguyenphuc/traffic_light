@@ -9,24 +9,25 @@
 
 void fsm_manual_run(){
 	switch(status){
-//		case TUNING_RED:
-//			// TODO:
-//
-//			//SWITCH CASE
-//			break;
-//		case TUNING_YELLOW:
-//			// TODO:
-//
-//			//SWITCH CASE
-//
-//			break;
-//		case :
-//			// TODO:
-//
-//			//SWITCH CASE
-//
-//			break;
-//		default:
-//			break;
+		case MAN_RED:
+			// TODO:
+
+			//SWITCH CASE
+
+			break;
+		case MAN_YELLOW:
+			// TODO:
+
+			//SWITCH CASE
+
+			break;
+		case MAN_GREEN:
+			// TODO:
+
+			//SWITCH CASE
+
+			break;
+		default:
+			break;
 	}
 }
