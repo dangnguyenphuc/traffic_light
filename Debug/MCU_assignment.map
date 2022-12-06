@@ -53,15 +53,15 @@ __lock___env_recursive_mutex
                     0x1               c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-lock.o)
 __lock___sinit_recursive_mutex
                     0x1               c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-lock.o)
-htim3               0x48              ./Core/Src/main.o
+htim3               0x48              ./Core/Src/button.o
 __lock___malloc_recursive_mutex
                     0x1               c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-lock.o)
 tail                0x4               ./Core/Src/scheduler.o
 head                0x4               ./Core/Src/scheduler.o
 cur_index           0x4               ./Core/Src/scheduler.o
 sTask               0x258             ./Core/Src/scheduler.o
-htim2               0x48              ./Core/Src/main.o
-huart2              0x44              ./Core/Src/main.o
+htim2               0x48              ./Core/Src/button.o
+huart2              0x44              ./Core/Src/button.o
 __lock___at_quick_exit_mutex
                     0x1               c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-lock.o)
 __lock___dd_hash_mutex
@@ -973,6 +973,149 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x16 ./Core/Src/main.o
  .debug_macro   0x0000000000000000      0x145 ./Core/Src/main.o
  .debug_macro   0x0000000000000000       0x8e ./Core/Src/main.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .group         0x0000000000000000        0xc ./Core/Src/perihersal.o
+ .text          0x0000000000000000        0x0 ./Core/Src/perihersal.o
+ .data          0x0000000000000000        0x0 ./Core/Src/perihersal.o
+ .bss           0x0000000000000000        0x0 ./Core/Src/perihersal.o
+ .debug_info    0x0000000000000000     0x1336 ./Core/Src/perihersal.o
+ .debug_abbrev  0x0000000000000000      0x1ce ./Core/Src/perihersal.o
+ .debug_aranges
+                0x0000000000000000       0x18 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0x384 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0xa9c ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x22 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x8e ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x51 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0x103 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x6a ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0x1df ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0x21b ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x2e ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x22 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x1c ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x22 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0xc3 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0xd23 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000     0xe09e ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x6d ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000     0x3468 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0x174 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x5c ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0x5be ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0x289 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0x1cb ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0x114 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0x1b2 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x27 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0x136 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0x1bc ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x34 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x3c ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x57 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x88 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0x241 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0x141 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0x8d1 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0x279 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x83 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x7c ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x52 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x18 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x3c ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x34 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x16 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x35 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0x333 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x10 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x16 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x43 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x34 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x10 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x58 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x71 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x1c ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0x12a ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x10 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x1c ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x52 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x22 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x10 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x40 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0xd5 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x1c ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x3d ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x16 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000      0x145 ./Core/Src/perihersal.o
+ .debug_macro   0x0000000000000000       0x8e ./Core/Src/perihersal.o
+ .debug_line    0x0000000000000000      0x8d9 ./Core/Src/perihersal.o
+ .debug_str     0x0000000000000000    0x880aa ./Core/Src/perihersal.o
+ .comment       0x0000000000000000       0x54 ./Core/Src/perihersal.o
+ .ARM.attributes
+                0x0000000000000000       0x33 ./Core/Src/perihersal.o
  .group         0x0000000000000000        0xc ./Core/Src/scheduler.o
  .group         0x0000000000000000        0xc ./Core/Src/scheduler.o
  .group         0x0000000000000000        0xc ./Core/Src/scheduler.o
@@ -3400,6 +3543,7 @@ LOAD ./Core/Src/fsm_tuning.o
 LOAD ./Core/Src/global.o
 LOAD ./Core/Src/led.o
 LOAD ./Core/Src/main.o
+LOAD ./Core/Src/perihersal.o
 LOAD ./Core/Src/scheduler.o
 LOAD ./Core/Src/software_timer.o
 LOAD ./Core/Src/stm32f1xx_hal_msp.o
@@ -4101,7 +4245,7 @@ LOAD c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000020000148        0x4 c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-mallocr.o)
                 0x0000000020000148                __malloc_sbrk_start
  *(COMMON)
- COMMON         0x000000002000014c       0xd4 ./Core/Src/main.o
+ COMMON         0x000000002000014c       0xd4 ./Core/Src/button.o
                 0x000000002000014c                htim3
                 0x0000000020000194                htim2
                 0x00000000200001dc                huart2
@@ -4244,55 +4388,55 @@ LOAD c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
 LOAD c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a
 LOAD c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7-m/nofp\libgcc.a
 
-.debug_info     0x0000000000000000    0x10dcc
- .debug_info    0x0000000000000000      0x3cb ./Core/Src/button.o
- .debug_info    0x00000000000003cb      0xb58 ./Core/Src/fsm_automatic.o
- .debug_info    0x0000000000000f23      0xb58 ./Core/Src/fsm_manual.o
- .debug_info    0x0000000000001a7b      0xb58 ./Core/Src/fsm_pedestrian.o
- .debug_info    0x00000000000025d3      0xb58 ./Core/Src/fsm_tuning.o
- .debug_info    0x000000000000312b      0xbf4 ./Core/Src/global.o
- .debug_info    0x0000000000003d1f      0x2e7 ./Core/Src/led.o
- .debug_info    0x0000000000004006     0x18a5 ./Core/Src/main.o
- .debug_info    0x00000000000058ab      0xd40 ./Core/Src/scheduler.o
- .debug_info    0x00000000000065eb      0x25b ./Core/Src/software_timer.o
- .debug_info    0x0000000000006846      0xe38 ./Core/Src/stm32f1xx_hal_msp.o
- .debug_info    0x000000000000767e      0xa22 ./Core/Src/stm32f1xx_it.o
- .debug_info    0x00000000000080a0      0xa25 ./Core/Src/sysmem.o
- .debug_info    0x0000000000008ac5      0x2be ./Core/Src/system_stm32f1xx.o
- .debug_info    0x0000000000008d83       0x22 ./Core/Startup/startup_stm32f103rbtx.o
- .debug_info    0x0000000000008da5      0x76a ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
- .debug_info    0x000000000000950f      0xbdc ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
- .debug_info    0x000000000000a0eb      0x81e ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
- .debug_info    0x000000000000a909      0x701 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
- .debug_info    0x000000000000b00a      0x88e ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
- .debug_info    0x000000000000b898     0x2a45 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
- .debug_info    0x000000000000e2dd     0x14d5 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
- .debug_info    0x000000000000f7b2     0x161a ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
+.debug_info     0x0000000000000000    0x14db4
+ .debug_info    0x0000000000000000      0xbad ./Core/Src/button.o
+ .debug_info    0x0000000000000bad     0x1350 ./Core/Src/fsm_automatic.o
+ .debug_info    0x0000000000001efd     0x1350 ./Core/Src/fsm_manual.o
+ .debug_info    0x000000000000324d     0x1350 ./Core/Src/fsm_pedestrian.o
+ .debug_info    0x000000000000459d     0x1350 ./Core/Src/fsm_tuning.o
+ .debug_info    0x00000000000058ed     0x13ec ./Core/Src/global.o
+ .debug_info    0x0000000000006cd9      0xac9 ./Core/Src/led.o
+ .debug_info    0x00000000000077a2     0x18a5 ./Core/Src/main.o
+ .debug_info    0x0000000000009047     0x1538 ./Core/Src/scheduler.o
+ .debug_info    0x000000000000a57f      0x25b ./Core/Src/software_timer.o
+ .debug_info    0x000000000000a7da      0xe6e ./Core/Src/stm32f1xx_hal_msp.o
+ .debug_info    0x000000000000b648      0xa40 ./Core/Src/stm32f1xx_it.o
+ .debug_info    0x000000000000c088      0xa25 ./Core/Src/sysmem.o
+ .debug_info    0x000000000000caad      0x2be ./Core/Src/system_stm32f1xx.o
+ .debug_info    0x000000000000cd6b       0x22 ./Core/Startup/startup_stm32f103rbtx.o
+ .debug_info    0x000000000000cd8d      0x76a ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
+ .debug_info    0x000000000000d4f7      0xbdc ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+ .debug_info    0x000000000000e0d3      0x81e ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
+ .debug_info    0x000000000000e8f1      0x701 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
+ .debug_info    0x000000000000eff2      0x88e ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+ .debug_info    0x000000000000f880     0x2a45 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
+ .debug_info    0x00000000000122c5     0x14d5 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
+ .debug_info    0x000000000001379a     0x161a ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
 
-.debug_abbrev   0x0000000000000000     0x2a81
- .debug_abbrev  0x0000000000000000      0x18a ./Core/Src/button.o
- .debug_abbrev  0x000000000000018a      0x1b5 ./Core/Src/fsm_automatic.o
- .debug_abbrev  0x000000000000033f      0x1b5 ./Core/Src/fsm_manual.o
- .debug_abbrev  0x00000000000004f4      0x1b5 ./Core/Src/fsm_pedestrian.o
- .debug_abbrev  0x00000000000006a9      0x1b5 ./Core/Src/fsm_tuning.o
- .debug_abbrev  0x000000000000085e      0x1a8 ./Core/Src/global.o
- .debug_abbrev  0x0000000000000a06      0x125 ./Core/Src/led.o
- .debug_abbrev  0x0000000000000b2b      0x30f ./Core/Src/main.o
- .debug_abbrev  0x0000000000000e3a      0x275 ./Core/Src/scheduler.o
- .debug_abbrev  0x00000000000010af       0xa3 ./Core/Src/software_timer.o
- .debug_abbrev  0x0000000000001152      0x1c8 ./Core/Src/stm32f1xx_hal_msp.o
- .debug_abbrev  0x000000000000131a      0x176 ./Core/Src/stm32f1xx_it.o
- .debug_abbrev  0x0000000000001490      0x1bf ./Core/Src/sysmem.o
- .debug_abbrev  0x000000000000164f      0x14e ./Core/Src/system_stm32f1xx.o
- .debug_abbrev  0x000000000000179d       0x12 ./Core/Startup/startup_stm32f103rbtx.o
- .debug_abbrev  0x00000000000017af      0x1ed ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
- .debug_abbrev  0x000000000000199c      0x313 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
- .debug_abbrev  0x0000000000001caf      0x228 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
- .debug_abbrev  0x0000000000001ed7      0x1e8 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
- .debug_abbrev  0x00000000000020bf      0x273 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
- .debug_abbrev  0x0000000000002332      0x25e ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
- .debug_abbrev  0x0000000000002590      0x266 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
- .debug_abbrev  0x00000000000027f6      0x28b ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
+.debug_abbrev   0x0000000000000000     0x2cc0
+ .debug_abbrev  0x0000000000000000      0x201 ./Core/Src/button.o
+ .debug_abbrev  0x0000000000000201      0x1ea ./Core/Src/fsm_automatic.o
+ .debug_abbrev  0x00000000000003eb      0x1ea ./Core/Src/fsm_manual.o
+ .debug_abbrev  0x00000000000005d5      0x1ea ./Core/Src/fsm_pedestrian.o
+ .debug_abbrev  0x00000000000007bf      0x1ea ./Core/Src/fsm_tuning.o
+ .debug_abbrev  0x00000000000009a9      0x1dd ./Core/Src/global.o
+ .debug_abbrev  0x0000000000000b86      0x19c ./Core/Src/led.o
+ .debug_abbrev  0x0000000000000d22      0x30f ./Core/Src/main.o
+ .debug_abbrev  0x0000000000001031      0x297 ./Core/Src/scheduler.o
+ .debug_abbrev  0x00000000000012c8       0xa3 ./Core/Src/software_timer.o
+ .debug_abbrev  0x000000000000136b      0x1db ./Core/Src/stm32f1xx_hal_msp.o
+ .debug_abbrev  0x0000000000001546      0x189 ./Core/Src/stm32f1xx_it.o
+ .debug_abbrev  0x00000000000016cf      0x1bf ./Core/Src/sysmem.o
+ .debug_abbrev  0x000000000000188e      0x14e ./Core/Src/system_stm32f1xx.o
+ .debug_abbrev  0x00000000000019dc       0x12 ./Core/Startup/startup_stm32f103rbtx.o
+ .debug_abbrev  0x00000000000019ee      0x1ed ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o
+ .debug_abbrev  0x0000000000001bdb      0x313 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o
+ .debug_abbrev  0x0000000000001eee      0x228 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o
+ .debug_abbrev  0x0000000000002116      0x1e8 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o
+ .debug_abbrev  0x00000000000022fe      0x273 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o
+ .debug_abbrev  0x0000000000002571      0x25e ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o
+ .debug_abbrev  0x00000000000027cf      0x266 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o
+ .debug_abbrev  0x0000000000002a35      0x28b ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
 
 .debug_aranges  0x0000000000000000      0xde8
  .debug_aranges
@@ -4482,30 +4626,30 @@ LOAD c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_line    0x000000000000f5fc     0x1a03 ./Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o
 
 .debug_str      0x0000000000000000    0x8b2d9
- .debug_str     0x0000000000000000    0x83440 ./Core/Src/button.o
-                                      0x837aa (size before relaxing)
- .debug_str     0x0000000000083440     0x4397 ./Core/Src/fsm_automatic.o
-                                      0x879fc (size before relaxing)
- .debug_str     0x00000000000877d7       0x28 ./Core/Src/fsm_manual.o
-                                      0x879f6 (size before relaxing)
- .debug_str     0x00000000000877ff       0x30 ./Core/Src/fsm_pedestrian.o
-                                      0x879fe (size before relaxing)
- .debug_str     0x000000000008782f       0x28 ./Core/Src/fsm_tuning.o
-                                      0x879f6 (size before relaxing)
- .debug_str     0x0000000000087857       0x15 ./Core/Src/global.o
-                                      0x879e3 (size before relaxing)
- .debug_str     0x000000000008786c       0x43 ./Core/Src/led.o
-                                      0x83667 (size before relaxing)
- .debug_str     0x00000000000878af      0x947 ./Core/Src/main.o
+ .debug_str     0x0000000000000000    0x83a25 ./Core/Src/button.o
+                                      0x83e46 (size before relaxing)
+ .debug_str     0x0000000000083a25     0x4397 ./Core/Src/fsm_automatic.o
+                                      0x880ac (size before relaxing)
+ .debug_str     0x0000000000087dbc       0x28 ./Core/Src/fsm_manual.o
+                                      0x880a6 (size before relaxing)
+ .debug_str     0x0000000000087de4       0x30 ./Core/Src/fsm_pedestrian.o
+                                      0x880ae (size before relaxing)
+ .debug_str     0x0000000000087e14       0x28 ./Core/Src/fsm_tuning.o
+                                      0x880a6 (size before relaxing)
+ .debug_str     0x0000000000087e3c       0x15 ./Core/Src/global.o
+                                      0x88093 (size before relaxing)
+ .debug_str     0x0000000000087e51       0x43 ./Core/Src/led.o
+                                      0x83d03 (size before relaxing)
+ .debug_str     0x0000000000087e94      0x362 ./Core/Src/main.o
                                       0x8841f (size before relaxing)
  .debug_str     0x00000000000881f6       0xca ./Core/Src/scheduler.o
-                                      0x87ab6 (size before relaxing)
+                                      0x8815f (size before relaxing)
  .debug_str     0x00000000000882c0       0x94 ./Core/Src/software_timer.o
                                        0x2e8c (size before relaxing)
  .debug_str     0x0000000000088354      0x332 ./Core/Src/stm32f1xx_hal_msp.o
-                                      0x84093 (size before relaxing)
+                                      0x840a6 (size before relaxing)
  .debug_str     0x0000000000088686       0xdf ./Core/Src/stm32f1xx_it.o
-                                      0x83d4e (size before relaxing)
+                                      0x83d54 (size before relaxing)
  .debug_str     0x0000000000088765      0x4e9 ./Core/Src/sysmem.o
                                        0x624c (size before relaxing)
  .debug_str     0x0000000000088c4e       0x52 ./Core/Src/system_stm32f1xx.o

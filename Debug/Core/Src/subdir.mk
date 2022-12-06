@@ -13,6 +13,7 @@ C_SRCS += \
 ../Core/Src/global.c \
 ../Core/Src/led.c \
 ../Core/Src/main.c \
+../Core/Src/perihersal.c \
 ../Core/Src/scheduler.c \
 ../Core/Src/software_timer.c \
 ../Core/Src/stm32f1xx_hal_msp.c \
@@ -30,6 +31,7 @@ OBJS += \
 ./Core/Src/global.o \
 ./Core/Src/led.o \
 ./Core/Src/main.o \
+./Core/Src/perihersal.o \
 ./Core/Src/scheduler.o \
 ./Core/Src/software_timer.o \
 ./Core/Src/stm32f1xx_hal_msp.o \
@@ -47,6 +49,7 @@ C_DEPS += \
 ./Core/Src/global.d \
 ./Core/Src/led.d \
 ./Core/Src/main.d \
+./Core/Src/perihersal.d \
 ./Core/Src/scheduler.d \
 ./Core/Src/software_timer.d \
 ./Core/Src/stm32f1xx_hal_msp.d \
