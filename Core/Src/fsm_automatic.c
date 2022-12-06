@@ -33,12 +33,23 @@ void fsm_automatic_run(){
 				buzzer_time = BUZZER_CYCLE;
 			}
 
-
 			//SWITCH CASE
 			if(timer3_flag){
 				setTimer3(yellow_time);
 				status = AUTO_YELLOW1;
 			}
+
+			if (is_button_pressed(1)) {
+				status = MAN_GREEN1;
+				setTimer3(MANUAL_TIME);
+			}
+
+			if (is_button_pressed(2)) {
+				status = TUNING_RED;
+				setTimer3(TUNING_TIME);
+			}
+
+
 			break;
 		case AUTO_YELLOW1:
 			// TODO:
@@ -52,12 +63,24 @@ void fsm_automatic_run(){
 				buzzer_freq = BUZZER_FREQ_START;
 				buzzer_time = BUZZER_CYCLE;
 			}
+
 			//SWITCH CASE
 			if(timer3_flag && timer4_flag){
 				setTimer3(red_time);
 				setTimer4(green_time_2);
 				status = AUTO_GREEN2;
 			}
+
+			if (is_button_pressed(1)) {
+				status = MAN_YELLOW1;
+				setTimer3(MANUAL_TIME);
+			}
+
+			if (is_button_pressed(2)) {
+				status = TUNING_RED;
+				setTimer3(TUNING_TIME);
+			}
+
 
 			break;
 		case AUTO_GREEN2:
@@ -79,6 +102,18 @@ void fsm_automatic_run(){
 				status = AUTO_YELLOW2;
 			}
 
+			if (is_button_pressed(1)) {
+				status = MAN_GREEN2;
+				setTimer3(MANUAL_TIME);
+			}
+
+			if (is_button_pressed(2)) {
+				status = TUNING_RED;
+				setTimer3(TUNING_TIME);
+			}
+
+
+
 			break;
 		case AUTO_YELLOW2:
 			// TODO:
@@ -98,6 +133,16 @@ void fsm_automatic_run(){
 				setTimer3(green_time);
 				setTimer4(red_time_2);
 				status = AUTO_GREEN1;
+			}
+
+			if (is_button_pressed(1)) {
+				status = MAN_YELLOW2;
+				setTimer3(MANUAL_TIME);
+			}
+
+			if (is_button_pressed(2)) {
+				status = TUNING_RED;
+				setTimer3(TUNING_TIME);
 			}
 
 			break;
