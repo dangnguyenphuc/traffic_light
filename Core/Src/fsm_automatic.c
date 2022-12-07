@@ -29,6 +29,7 @@ void fsm_automatic_run(){
 			if(is_button_pressed(0)){
 				status_pedestrian = STOP_LIGHT;
 				setTimer1(PEDESTRIAN_TIME);
+
 				buzzer_freq = BUZZER_FREQ_START;
 				buzzer_time = BUZZER_CYCLE;
 			}
@@ -90,6 +91,7 @@ void fsm_automatic_run(){
 			setGreen(1);
 				// if PEDESTRIAN PRESSED:
 			if(is_button_pressed(0)){
+				setTimer5(BUZZER_CYCLE);
 				status_pedestrian = WALK_LIGHT;
 				setTimer1(PEDESTRIAN_TIME);
 				buzzer_freq = BUZZER_FREQ_START;
@@ -122,6 +124,7 @@ void fsm_automatic_run(){
 			setYellow(1);
 				// if PEDESTRIAN PRESSED:
 			if(is_button_pressed(0)){
+				setTimer5(BUZZER_CYCLE);
 				status_pedestrian = WALK_LIGHT;
 				setTimer1(PEDESTRIAN_TIME);
 				buzzer_freq = BUZZER_FREQ_START;

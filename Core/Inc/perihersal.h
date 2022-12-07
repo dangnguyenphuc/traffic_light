@@ -10,6 +10,7 @@
 
 #include "global.h"
 
-
+void sendingUART();
+void Buzzer();
 
 #endif /* INC_PERIHERSAL_H_ */

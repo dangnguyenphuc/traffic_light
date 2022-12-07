@@ -16,6 +16,7 @@
 #include "fsm_manual.h"
 #include "fsm_pedestrian.h"
 #include "fsm_tuning.h"
+#include "perihersal.h"
 #include <stdio.h>
 
 extern int counter;
@@ -56,7 +57,7 @@ extern int status_pedestrian;
 #define MANUAL_TIME			10000
 #define TUNING_TIME			10000
 #define PEDESTRIAN_TIME		20000
-#define BUZZER_CYCLE		1500
+#define BUZZER_CYCLE			1300
 #define BUZZER_FREQ_START	50
 
 extern int red_time;

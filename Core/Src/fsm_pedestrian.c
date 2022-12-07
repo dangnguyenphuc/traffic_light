@@ -19,25 +19,29 @@ void fsm_pedestrian_run(){
 				setPedestrian(3); // turn off light
 				buzzer_freq = 0;
 				buzzer_time = 0;
+				__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 0);
 			}
 			if(status == AUTO_GREEN2 || status == AUTO_YELLOW2){
 				status_pedestrian = WALK_LIGHT;
+				setTimer5(BUZZER_CYCLE);
 			}
 
 			break;
 		case WALK_LIGHT:
 			//TODO:
 			setPedestrian(1);
-
+			Buzzer();
 			//SWITCH CASE
 			if(timer1_flag){
 				status_pedestrian = -1;
 				setPedestrian(3); // turn off light
 				buzzer_freq = 0;
 				buzzer_time = 0;
+				__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 0);
 			}
 			if(status == AUTO_GREEN1 || status == AUTO_YELLOW1){
 				status_pedestrian = STOP_LIGHT;
+				__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 0);
 			}
 
 			break;

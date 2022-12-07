@@ -62,37 +62,7 @@ static void MX_USART2_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void sendingUART(){
-	if(timer2_flag){
-		if(!timer3_flag){
-			HAL_UART_Transmit(&huart2, (void *)buffer_tx, sprintf (buffer_tx,"!7SEG:%d:LIGHT1#", timer3_counter / 1000), 1000);
-		}else{
-			HAL_UART_Transmit(&huart2, (void *)buffer_tx, sprintf (buffer_tx,"!7SEG:DELAY:LIGHT1#"), 1000);
-		}
 
-		if(!timer4_flag){
-			HAL_UART_Transmit(&huart2, (void *)buffer_tx, sprintf (buffer_tx,"!7SEG:%d:LIGHT2#", timer4_counter / 1000), 1000);
-		}else{
-			HAL_UART_Transmit(&huart2, (void *)buffer_tx, sprintf (buffer_tx,"!7SEG:DELAY:LIGHT2#"), 1000);
-		}
-		setTimer2(1000);
-	}
-}
-
-void Buzzer(){
-	if(status_pedestrian != -1){
-		if(timer5_flag){
-			__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, buzzer_freq);
-			buzzer_freq += 40;
-			buzzer_time -= 40;
-
-			if(buzzer_freq >= 1000) buzzer_freq = 1000;
-			if(buzzer_time <= 100)	buzzer_time = 100;
-			setTimer5(buzzer_time);
-		}
-	}
-	else __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 0);
-}
 /* USER CODE END 0 */
 
 /**
@@ -155,7 +125,6 @@ int main(void)
 //	  HAL_Delay(1000);
 
 	  sendingUART();
-	  Buzzer();
 
   }
   /* USER CODE END 3 */

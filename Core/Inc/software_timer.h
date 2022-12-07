@@ -33,6 +33,17 @@ extern int timer5_counter;
 void setTimer5(int time);
 void clearTimer5();
 
+extern int timer6_flag;
+extern int timer6_counter;
+void setTimer6(int time);
+void clearTimer6();
+
+extern int timer7_flag;
+extern int timer7_counter;
+void setTimer7(int time);
+void clearTimer7();
+
+
 void TimerRun();
 
 #endif /* INC_SOFTWARE_TIMER_H_ */

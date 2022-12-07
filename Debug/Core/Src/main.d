@@ -28,7 +28,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/button.h ../Core/Inc/main.h ../Core/Inc/software_timer.h \
  ../Core/Inc/led.h ../Core/Inc/fsm_automatic.h ../Core/Inc/fsm_manual.h \
  ../Core/Inc/fsm_pedestrian.h ../Core/Inc/fsm_tuning.h \
- ../Core/Inc/scheduler.h
+ ../Core/Inc/perihersal.h ../Core/Inc/scheduler.h
 
 ../Core/Inc/main.h:
 
@@ -103,5 +103,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/fsm_pedestrian.h:
 
 ../Core/Inc/fsm_tuning.h:
+
+../Core/Inc/perihersal.h:
 
 ../Core/Inc/scheduler.h:
