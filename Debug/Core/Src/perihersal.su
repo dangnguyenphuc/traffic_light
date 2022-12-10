@@ -1,2 +1,3 @@
-perihersal.c:10:6:sendingUART	8	static
-perihersal.c:27:6:Buzzer	8	static
+perihersal.c:10:6:sendingUART_RUN	8	static
+perihersal.c:27:6:sendingUART_SETTING	16	static
+perihersal.c:31:6:Buzzer	8	static

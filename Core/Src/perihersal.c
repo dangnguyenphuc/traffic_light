@@ -7,7 +7,7 @@
 
 #include "perihersal.h"
 
-void sendingUART(){
+void sendingUART_RUN(){
 	if(timer2_flag){
 		if(!timer3_flag){
 			HAL_UART_Transmit(&huart2, (void *)buffer_tx, sprintf (buffer_tx,"!7SEG:%d:LIGHT1#\r\n", timer3_counter/100), 1000);
@@ -22,6 +22,10 @@ void sendingUART(){
 		}
 		setTimer2(1000);
 	}
+}
+
+void sendingUART_SETTING(){
+		HAL_UART_Transmit(&huart2, (void *)buffer_tx, sprintf (buffer_tx,"!RED:%d:YELLOW:%d:GREEN:%d#\r\n", red_time/100, yellow_time/100, green_time/100), 1000);
 }
 
 void Buzzer(){
@@ -44,5 +48,4 @@ void Buzzer(){
 	if(timer6_flag){
 		__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 0);
 	}
-//	__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 0);
 }

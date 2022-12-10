@@ -124,7 +124,7 @@ int main(void)
 //	  __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 1000);
 //	  HAL_Delay(1000);
 
-	  sendingUART();
+//	  sendingUART();
 
   }
   /* USER CODE END 3 */

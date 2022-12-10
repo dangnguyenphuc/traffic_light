@@ -14,6 +14,11 @@ void fsm_manual_run(){
 			// RED2 on, GREEN1 on
 		setRed(1);
 		setGreen(0);
+
+			// display value by UART
+		sendingUART_RUN();
+
+
 			// if PEDESTRIAN PRESSED:
 		if(is_button_pressed(0)){
 			status_pedestrian = STOP_LIGHT;
@@ -34,12 +39,22 @@ void fsm_manual_run(){
 			setTimer4(yellow_time);
 		}
 
+		if (is_button_pressed(2)) {
+			status = TUNING_RED;
+			setTimer3(TUNING_TIME);
+			setTimer9(10);
+		}
+
 		break;
 	case MAN_YELLOW1:
 		// TODO:
 			// RED2 still on, YELLOW1 on
 		setRed(1);
 		setYellow(0);
+
+			// display value by UART
+		sendingUART_RUN();
+
 			// if PEDESTRIAN PRESSED:
 		if(is_button_pressed(0)){
 			status_pedestrian =	STOP_LIGHT;
@@ -59,12 +74,22 @@ void fsm_manual_run(){
 			setTimer4(green_time_2);
 		}
 
+		if (is_button_pressed(2)) {
+			status = TUNING_RED;
+			setTimer3(TUNING_TIME);
+			setTimer9(10);
+		}
+
 		break;
 	case MAN_GREEN2:
 		// TODO:
 			// RED2 off, GREEN2 on, RED1 on
 		setRed(0);
 		setGreen(1);
+
+			// display value by UART
+		sendingUART_RUN();
+
 			// if PEDESTRIAN PRESSED:
 		if(is_button_pressed(0)){
 			status_pedestrian = WALK_LIGHT;
@@ -85,12 +110,22 @@ void fsm_manual_run(){
 			setTimer3(yellow_time_2);
 		}
 
+		if (is_button_pressed(2)) {
+			status = TUNING_RED;
+			setTimer3(TUNING_TIME);
+			setTimer9(10);
+		}
+
 		break;
 	case MAN_YELLOW2:
 		// TODO:
 			// RED1 still on, YELLOW2 on
 		setRed(0);
 		setYellow(1);
+
+			// display value by UART
+		sendingUART_RUN();
+
 			// if PEDESTRIAN PRESSED:
 		if(is_button_pressed(0)){
 			status_pedestrian = WALK_LIGHT;
@@ -109,6 +144,12 @@ void fsm_manual_run(){
 			setTimer3(green_time);
 			setTimer4(red_time_2);
 			status = AUTO_GREEN1;
+		}
+
+		if (is_button_pressed(2)) {
+			status = TUNING_RED;
+			setTimer3(TUNING_TIME);
+			setTimer9(10);
 		}
 
 		break;

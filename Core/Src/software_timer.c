@@ -30,6 +30,12 @@ int timer6_counter = 0;
 int timer7_flag = 0;
 int timer7_counter = 0;
 
+int timer8_flag = 0;
+int timer8_counter = 0;
+
+int timer9_flag = 0;
+int timer9_counter = 0;
+
 void setTimer1(int time){
 	timer1_counter = time/10;
 	timer1_flag = 0;
@@ -100,6 +106,26 @@ void clearTimer7(){
 	timer7_flag = 0;
 }
 
+void setTimer8(int time){
+	timer8_counter = time/10;
+	timer8_flag = 0;
+}
+
+void clearTimer8(){
+	timer8_counter = 0;
+	timer8_flag = 0;
+}
+
+void setTimer9(int time){
+	timer9_counter = time/10;
+	timer9_flag = 0;
+}
+
+void clearTimer9(){
+	timer9_counter = 0;
+	timer9_flag = 0;
+}
+
 void TimerRun(){
 	if(timer1_counter > 0){
 		timer1_counter -= 1;
@@ -147,5 +173,19 @@ void TimerRun(){
 	}
 	else{
 		timer7_flag = 1;
+	}
+
+	if(timer8_counter > 0){
+		timer8_counter -= 1;
+	}
+	else{
+		timer8_flag = 1;
+	}
+
+	if(timer9_counter > 0){
+		timer9_counter -= 1;
+	}
+	else{
+		timer9_flag = 1;
 	}
 }

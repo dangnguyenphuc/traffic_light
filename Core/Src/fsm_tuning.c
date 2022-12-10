@@ -22,11 +22,12 @@ void fsm_tuning_run(){
 
 			red_time_2 = red_time;
 
-			// toogle LED
-			if(timer2_flag){
+			// toogle LED and send Setting informations
+			if(timer9_flag){
 				setRed(0);
 				setRed(1);
-				// not need to set timer 2 because of it is used to Call Back UART in main.c
+				sendingUART_SETTING();
+				setTimer9(1000);
 			}
 
 			//SWITCH CASE
@@ -36,6 +37,7 @@ void fsm_tuning_run(){
 			else if(is_button_pressed(2)){
 				status = TUNING_YELLOW;
 				setTimer3(TUNING_TIME);
+				setTimer9(1000);
 			}
 			else if(is_button_pressed(1)){
 				status = AUTO_INIT;
@@ -53,27 +55,29 @@ void fsm_tuning_run(){
 			}
 
 			yellow_time_2 = yellow_time;
-			// toogle LED
-			if(timer2_flag){
+			// toogle LED and send Setting informations
+			if(timer9_flag){
 				setYellow(0);
 				setYellow(1);
-				// not need to set timer 2 because of it is used to Call Back UART in main.c
+				sendingUART_SETTING();
+				setTimer9(1000);
 			}
 
 			//SWITCH CASE
 			if(timer3_flag){
-				setTimer3(green_time);
-				status = AUTO_GREEN2;
+				status = AUTO_INIT;
 			}
 			else if(is_button_pressed(2)){
 				status = TUNING_GREEN;
 				setTimer3(TUNING_TIME);
+				setTimer9(1000);
 			}
 			else if(is_button_pressed(1)){
 				status = AUTO_INIT;
 			}
 
 			break;
+
 		case TUNING_GREEN:
 			// TODO:
 			if(is_button_pressed(3)){
@@ -84,20 +88,21 @@ void fsm_tuning_run(){
 			}
 
 			green_time_2 = green_time;
-			// toogle LED
-			if(timer2_flag){
+			// toogle LED and send Setting informations
+			if(timer9_flag){
 				setGreen(0);
 				setGreen(1);
-				// not need to set timer 2 because of it is used to Call Back UART in main.c
+				sendingUART_SETTING();
+				setTimer9(1000);
 			}
 			//SWITCH CASE
 			if(timer3_flag){
-				setTimer3(yellow_time);
-				status = AUTO_YELLOW2;
+				status = AUTO_INIT;
 			}
 			else if(is_button_pressed(2)){
 				status = TUNING_RED;
 				setTimer3(TUNING_TIME);
+				setTimer9(1000);
 			}
 			else if(is_button_pressed(1)){
 				status = AUTO_INIT;

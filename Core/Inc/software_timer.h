@@ -43,6 +43,16 @@ extern int timer7_counter;
 void setTimer7(int time);
 void clearTimer7();
 
+extern int timer8_flag;
+extern int timer8_counter;
+void setTimer8(int time);
+void clearTimer8();
+
+extern int timer9_flag;
+extern int timer9_counter;
+void setTimer9(int time);
+void clearTimer9();
+
 
 void TimerRun();
 
