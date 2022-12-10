@@ -7,13 +7,13 @@
 ### Timers information: 
 	* timer1: count down for exiting Pedestrian MODE.
 	* timer2: sending UART about Lights counters value.
-	* timer3: counter of 1st Traffic Light in AUTO MODE or count down for exiting MANUAL MODE or count down for exiting TUNNING MODE.
+	* timer3: counter of 1st Traffic Light in AUTO MODE or count down for exiting MANUAL MODE or count down for exiting TUNING MODE.
 	* timer4: counter of 2nd Traffic Light.
-	* timer5: counter for turning on Buzzer
-	* timer6: counter for turning off Buzzer
-	* timer7:
+	* timer5: counter for turning on Buzzer.
+	* timer6: counter for turning off Buzzer.
+	* timer7: counter for toggle LED in TUNING MODE.
 	* timer8:
-	* timer9: toogle LED and sending UART about Tunning information. 
+	* timer9: toogle LED and sending UART about TUNING information. 
 
 
 # END
