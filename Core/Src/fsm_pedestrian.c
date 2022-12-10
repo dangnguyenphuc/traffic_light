@@ -31,6 +31,8 @@ void fsm_pedestrian_run(){
 			//TODO:
 			setPedestrian(1);
 			Buzzer();
+
+
 			//SWITCH CASE
 			if(timer1_flag){
 				status_pedestrian = -1;

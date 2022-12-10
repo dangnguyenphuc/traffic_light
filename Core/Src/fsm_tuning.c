@@ -15,9 +15,11 @@ void fsm_tuning_run(){
 			// TODO:
 			if(is_button_pressed(3)){
 				red_time += 500;
+				sendingUART_SETTING();
 			}
 			if(is_button_pressed_1s(3)){
 				red_time -= 500;
+				sendingUART_SETTING();
 			}
 
 			red_time_2 = red_time;
@@ -26,8 +28,11 @@ void fsm_tuning_run(){
 			if(timer9_flag){
 				setRed(0);
 				setRed(1);
-				sendingUART_SETTING();
-				setTimer9(1000);
+				setTimer9(2000);
+				setTimer7(1000);
+			}
+			if(timer7_flag){
+				setRed(2);	// Turn off
 			}
 
 			//SWITCH CASE
@@ -37,7 +42,7 @@ void fsm_tuning_run(){
 			else if(is_button_pressed(2)){
 				status = TUNING_YELLOW;
 				setTimer3(TUNING_TIME);
-				setTimer9(1000);
+				setTimer9(10);
 			}
 			else if(is_button_pressed(1)){
 				status = AUTO_INIT;
@@ -49,18 +54,24 @@ void fsm_tuning_run(){
 			// TODO:
 			if(is_button_pressed(3)){
 				yellow_time += 500;
+				sendingUART_SETTING();
 			}
 			if(is_button_pressed_1s(3)){
 				yellow_time -= 500;
+				sendingUART_SETTING();
 			}
 
 			yellow_time_2 = yellow_time;
+
 			// toogle LED and send Setting informations
 			if(timer9_flag){
 				setYellow(0);
 				setYellow(1);
-				sendingUART_SETTING();
-				setTimer9(1000);
+				setTimer9(2000);
+				setTimer7(1000);
+			}
+			if(timer7_flag){
+				setRed(2);	// Turn off
 			}
 
 			//SWITCH CASE
@@ -70,7 +81,7 @@ void fsm_tuning_run(){
 			else if(is_button_pressed(2)){
 				status = TUNING_GREEN;
 				setTimer3(TUNING_TIME);
-				setTimer9(1000);
+				setTimer9(10);
 			}
 			else if(is_button_pressed(1)){
 				status = AUTO_INIT;
@@ -82,19 +93,26 @@ void fsm_tuning_run(){
 			// TODO:
 			if(is_button_pressed(3)){
 				green_time += 500;
+				sendingUART_SETTING();
 			}
 			if(is_button_pressed_1s(3)){
 				green_time -= 500;
+				sendingUART_SETTING();
 			}
 
 			green_time_2 = green_time;
+
 			// toogle LED and send Setting informations
 			if(timer9_flag){
 				setGreen(0);
 				setGreen(1);
-				sendingUART_SETTING();
-				setTimer9(1000);
+				setTimer9(2000);
+				setTimer7(1000);
 			}
+			if(timer7_flag){
+				setRed(2);	// Turn off
+			}
+
 			//SWITCH CASE
 			if(timer3_flag){
 				status = AUTO_INIT;
@@ -102,7 +120,7 @@ void fsm_tuning_run(){
 			else if(is_button_pressed(2)){
 				status = TUNING_RED;
 				setTimer3(TUNING_TIME);
-				setTimer9(1000);
+				setTimer9(10);
 			}
 			else if(is_button_pressed(1)){
 				status = AUTO_INIT;

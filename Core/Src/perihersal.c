@@ -32,12 +32,12 @@ void Buzzer(){
 	if(timer5_flag){
 		__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, buzzer_freq);
 		setTimer6(buzzer_time/2);
-		if(timer3_counter<5000){
+		if(timer3_counter<4000){
+			buzzer_freq *= 3;
+			buzzer_time = (timer3_counter>0)? timer3_counter/6 : buzzer_time/5;
+		}else{
 			buzzer_freq += 100;
 			buzzer_time -= 100;
-		}else{
-			buzzer_freq += 30;
-			buzzer_time -= 30;
 		}
 
 
