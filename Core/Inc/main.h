@@ -37,6 +37,10 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
+TIM_HandleTypeDef htim2;
+TIM_HandleTypeDef htim3;
+
+UART_HandleTypeDef huart2;
 
 /* USER CODE END ET */
 
@@ -68,10 +72,10 @@ void Error_Handler(void);
 #define A2_TUNING_GPIO_Port GPIOA
 #define A3_SET_Pin GPIO_PIN_0
 #define A3_SET_GPIO_Port GPIOB
-#define D6_Pin GPIO_PIN_10
-#define D6_GPIO_Port GPIOB
-#define D7_Pin GPIO_PIN_8
-#define D7_GPIO_Port GPIOA
+#define D6_PEDESTRIAN_Pin GPIO_PIN_10
+#define D6_PEDESTRIAN_GPIO_Port GPIOB
+#define D7_PEDESTRIAN_Pin GPIO_PIN_8
+#define D7_PEDESTRIAN_GPIO_Port GPIOA
 #define D2_LED_RED1_Pin GPIO_PIN_10
 #define D2_LED_RED1_GPIO_Port GPIOA
 #define D3_LED_GREEN1_Pin GPIO_PIN_3

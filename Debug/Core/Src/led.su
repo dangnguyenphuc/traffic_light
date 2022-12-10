@@ -1,5 +1,5 @@
 led.c:22:6:setRed	16	static
 led.c:48:6:setYellow	16	static
 led.c:74:6:setGreen	16	static
-led.c:100:6:setPedestrian	16	static
-led.c:115:6:clearLED	16	static
+led.c:106:6:setPedestrian	16	static
+led.c:127:6:clearLED	16	static

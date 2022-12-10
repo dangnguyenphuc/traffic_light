@@ -9,6 +9,8 @@
 #define INC_FSM_MANUAL_H_
 
 #include "global.h"
+#include "main.h"
+#include "button.h"
 
 void fsm_manual_run();
 

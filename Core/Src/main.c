@@ -97,20 +97,35 @@ int main(void)
   MX_TIM3_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+  HAL_TIM_Base_Start_IT(&htim2);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+  SCH_Add_Task(TimerRun,0,10);
+  SCH_Add_Task(getKeyInput, 0, 10);
+
+  SCH_Add_Task(fsm_automatic_run, 0, 10);
+  SCH_Add_Task(fsm_manual_run, 0, 10);
+  SCH_Add_Task(fsm_tuning_run, 0, 10);
+
+  SCH_Add_Task(fsm_pedestrian_run, 0, 10);
+
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 100);
-	  HAL_Delay(1000);
-	  __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 1000);
-	  HAL_Delay(1000);
+	  SCH_Dispatch_Tasks();
+//	  __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 100);
+//	  HAL_Delay(1000);
+//	  __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 1000);
+//	  HAL_Delay(1000);
+
+	  sendingUART();
+
   }
   /* USER CODE END 3 */
 }
@@ -272,7 +287,7 @@ static void MX_USART2_UART_Init(void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 115200;
+  huart2.Init.BaudRate = 9600;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;
@@ -303,10 +318,10 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, D6_Pin|D3_LED_GREEN1_Pin|D5_LED_GREEN2_Pin|D4_LED_RED2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, D6_PEDESTRIAN_Pin|D3_LED_GREEN1_Pin|D5_LED_GREEN2_Pin|D4_LED_RED2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, D7_Pin|D2_LED_RED1_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, D7_PEDESTRIAN_Pin|D2_LED_RED1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : A0_Pin A1_MAN_Pin */
   GPIO_InitStruct.Pin = A0_Pin|A1_MAN_Pin;
@@ -326,15 +341,15 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(A3_SET_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : D6_Pin D3_LED_GREEN1_Pin D5_LED_GREEN2_Pin D4_LED_RED2_Pin */
-  GPIO_InitStruct.Pin = D6_Pin|D3_LED_GREEN1_Pin|D5_LED_GREEN2_Pin|D4_LED_RED2_Pin;
+  /*Configure GPIO pins : D6_PEDESTRIAN_Pin D3_LED_GREEN1_Pin D5_LED_GREEN2_Pin D4_LED_RED2_Pin */
+  GPIO_InitStruct.Pin = D6_PEDESTRIAN_Pin|D3_LED_GREEN1_Pin|D5_LED_GREEN2_Pin|D4_LED_RED2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : D7_Pin D2_LED_RED1_Pin */
-  GPIO_InitStruct.Pin = D7_Pin|D2_LED_RED1_Pin;
+  /*Configure GPIO pins : D7_PEDESTRIAN_Pin D2_LED_RED1_Pin */
+  GPIO_InitStruct.Pin = D7_PEDESTRIAN_Pin|D2_LED_RED1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -343,7 +358,9 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+	SCH_Update();
+}
 /* USER CODE END 4 */
 
 /**
