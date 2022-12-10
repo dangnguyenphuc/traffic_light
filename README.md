@@ -4,7 +4,7 @@
   - Author:
     * Nguyen Phuc Dang - 2012968
     * Nguyen Kim Ngoc Vy - 2015118
-### Timers information: 
+### Timers informations: 
 	* timer1: count down for exiting Pedestrian MODE.
 	* timer2: sending UART about Lights counters value.
 	* timer3: counter of 1st Traffic Light in AUTO MODE or count down for exiting MANUAL MODE or count down for exiting TUNING MODE.
@@ -15,5 +15,10 @@
 	* timer8:
 	* timer9: toogle LED and sending UART about TUNING information. 
 
+### Buttons informations:
+	* Button 0: PEDESTRIAN button. Just in AUTO MODE, press this button to turn on PEDESTRIAN FSM.
+	* Button 1: MANUAL button. Whenever in AUTO MODE or MANUAL MODE, press this button to switch to corresponding MANUAL MODE states.
+	* Button 2: TUNING button, Whenever in AUTO MODE or MANUAL MODE, press this button to switch to RED state of TUNING FSM.
+	* Button 3: used to set timer for LEDs in corresponding state in TUNING FSM. Press to increase and hold for 1 second to decrease the timer value. 
 
 # END
