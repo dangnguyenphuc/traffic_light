@@ -119,12 +119,6 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	  SCH_Dispatch_Tasks();
-//	  __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 100);
-//	  HAL_Delay(1000);
-//	  __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 1000);
-//	  HAL_Delay(1000);
-
-//	  sendingUART();
 
   }
   /* USER CODE END 3 */
