@@ -25,16 +25,16 @@ void sendingUART_RUN(){
 }
 
 void sendingUART_SETTING(){
-		HAL_UART_Transmit(&huart2, (void *)buffer_tx, sprintf (buffer_tx,"!RED:%d:YELLOW:%d:GREEN:%d#\r\n", red_time/100, yellow_time/100, green_time/100), 1000);
+		HAL_UART_Transmit(&huart2, (void *)buffer_tx, sprintf (buffer_tx,"!RED:%d:YELLOW:%d:GREEN:%d#\r\n", red_time/1000, yellow_time/1000, green_time/1000), 1000);
 }
 
 void Buzzer(){
 	if(timer5_flag){
 		__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, buzzer_freq);
 		setTimer6(buzzer_time/2);
-		if(timer3_counter<4000){
+		if(timer3_counter<2000){
 			buzzer_freq *= 3;
-			buzzer_time = (timer3_counter>0)? timer3_counter/6 : buzzer_time/5;
+			buzzer_time = (timer3_counter>0)? timer3_counter/4 : buzzer_time/3;
 		}else{
 			buzzer_freq += 100;
 			buzzer_time -= 100;

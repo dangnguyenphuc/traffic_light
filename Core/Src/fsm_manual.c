@@ -29,19 +29,19 @@ void fsm_manual_run(){
 
 		//SWITCH CASE
 		if(is_button_pressed(1)){
-			setTimer3(MANUAL_TIME);
+			setTimer8(MANUAL_TIME);
 			status = MAN_YELLOW1;
 		}
 
-		if (timer3_flag) {
+		if (timer8_flag) {
 			status = AUTO_YELLOW1;
-			setTimer3(yellow_time);
+			setTimer8(yellow_time);
 			setTimer4(yellow_time);
 		}
 
 		if (is_button_pressed(2)) {
 			status = TUNING_RED;
-			setTimer3(TUNING_TIME);
+			setTimer8(TUNING_TIME);
 			setTimer9(10);
 		}
 
@@ -64,19 +64,19 @@ void fsm_manual_run(){
 		}
 		//SWITCH CASE
 		if(is_button_pressed(1)){
-			setTimer3(MANUAL_TIME);
+			setTimer8(MANUAL_TIME);
 			status = MAN_GREEN2;
 		}
 
-		if (timer3_flag) {
+		if (timer8_flag) {
 			status = AUTO_GREEN2;
-			setTimer3(red_time);
+			setTimer8(red_time);
 			setTimer4(green_time_2);
 		}
 
 		if (is_button_pressed(2)) {
 			status = TUNING_RED;
-			setTimer3(TUNING_TIME);
+			setTimer8(TUNING_TIME);
 			setTimer9(10);
 		}
 
@@ -100,19 +100,19 @@ void fsm_manual_run(){
 
 		//SWITCH CASE
 		if(is_button_pressed(1)){
-			setTimer3(MANUAL_TIME);
+			setTimer8(MANUAL_TIME);
 			status = MAN_YELLOW2;
 		}
 
-		if (timer3_flag) {
+		if (timer8_flag) {
 			status = AUTO_YELLOW2;
-			setTimer4(yellow_time_2);
+			setTimer8(yellow_time_2);
 			setTimer3(yellow_time_2);
 		}
 
 		if (is_button_pressed(2)) {
 			status = TUNING_RED;
-			setTimer3(TUNING_TIME);
+			setTimer8(TUNING_TIME);
 			setTimer9(10);
 		}
 
@@ -136,19 +136,19 @@ void fsm_manual_run(){
 
 		//SWITCH CASE
 		if(is_button_pressed(1)){
-			setTimer3(MANUAL_TIME);
+			setTimer8(MANUAL_TIME);
 			status = MAN_GREEN1;
 		}
 
-		if (timer3_flag) {
-			setTimer3(green_time);
+		if (timer8_flag) {
+			setTimer8(green_time);
 			setTimer4(red_time_2);
 			status = AUTO_GREEN1;
 		}
 
 		if (is_button_pressed(2)) {
 			status = TUNING_RED;
-			setTimer3(TUNING_TIME);
+			setTimer8(TUNING_TIME);
 			setTimer9(10);
 		}
 

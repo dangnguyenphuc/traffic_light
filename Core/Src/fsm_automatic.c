@@ -46,13 +46,13 @@ void fsm_automatic_run(){
 
 			if (is_button_pressed(1)) {
 				status = MAN_GREEN1;
-				setTimer3(MANUAL_TIME);
+				setTimer8(MANUAL_TIME);
 				setTimer2(10);
 			}
 
 			if (is_button_pressed(2)) {
 				status = TUNING_RED;
-				setTimer3(TUNING_TIME);
+				setTimer8(TUNING_TIME);
 				setTimer9(10);
 			}
 
@@ -84,13 +84,13 @@ void fsm_automatic_run(){
 
 			if (is_button_pressed(1)) {
 				status = MAN_YELLOW1;
-				setTimer3(MANUAL_TIME);
+				setTimer8(MANUAL_TIME);
 				setTimer2(10);
 			}
 
 			if (is_button_pressed(2)) {
 				status = TUNING_RED;
-				setTimer3(TUNING_TIME);
+				setTimer8(TUNING_TIME);
 				setTimer9(10);
 			}
 
@@ -122,13 +122,13 @@ void fsm_automatic_run(){
 
 			if (is_button_pressed(1)) {
 				status = MAN_GREEN2;
-				setTimer3(MANUAL_TIME);
+				setTimer8(MANUAL_TIME);
 				setTimer2(10);
 			}
 
 			if (is_button_pressed(2)) {
 				status = TUNING_RED;
-				setTimer3(TUNING_TIME);
+				setTimer8(TUNING_TIME);
 				setTimer9(10);
 			}
 
@@ -162,13 +162,13 @@ void fsm_automatic_run(){
 
 			if (is_button_pressed(1)) {
 				status = MAN_YELLOW2;
-				setTimer3(MANUAL_TIME);
+				setTimer8(MANUAL_TIME);
 				setTimer2(10);
 			}
 
 			if (is_button_pressed(2)) {
 				status = TUNING_RED;
-				setTimer3(TUNING_TIME);
+				setTimer8(TUNING_TIME);
 				setTimer9(10);
 			}
 

@@ -14,12 +14,14 @@ void fsm_tuning_run(){
 		case TUNING_RED:
 			// TODO:
 			if(is_button_pressed(3)){
-				red_time += 500;
+				red_time += 1000;
 				sendingUART_SETTING();
+				setTimer8(TUNING_TIME);
 			}
 			if(is_button_pressed_1s(3)){
-				red_time -= 500;
+				red_time -= 1000;
 				sendingUART_SETTING();
+				setTimer8(TUNING_TIME);
 			}
 
 			red_time_2 = red_time;
@@ -36,12 +38,12 @@ void fsm_tuning_run(){
 			}
 
 			//SWITCH CASE
-			if(timer3_flag){
+			if(timer8_flag){
 				status = AUTO_INIT;
 			}
 			else if(is_button_pressed(2)){
 				status = TUNING_YELLOW;
-				setTimer3(TUNING_TIME);
+				setTimer8(TUNING_TIME);
 				setTimer9(10);
 			}
 			else if(is_button_pressed(1)){
@@ -53,12 +55,14 @@ void fsm_tuning_run(){
 		case TUNING_YELLOW:
 			// TODO:
 			if(is_button_pressed(3)){
-				yellow_time += 500;
+				yellow_time += 1000;
 				sendingUART_SETTING();
+				setTimer8(TUNING_TIME);
 			}
 			if(is_button_pressed_1s(3)){
-				yellow_time -= 500;
+				yellow_time -= 1000;
 				sendingUART_SETTING();
+				setTimer8(TUNING_TIME);
 			}
 
 			yellow_time_2 = yellow_time;
@@ -75,12 +79,12 @@ void fsm_tuning_run(){
 			}
 
 			//SWITCH CASE
-			if(timer3_flag){
+			if(timer8_flag){
 				status = AUTO_INIT;
 			}
 			else if(is_button_pressed(2)){
 				status = TUNING_GREEN;
-				setTimer3(TUNING_TIME);
+				setTimer8(TUNING_TIME);
 				setTimer9(10);
 			}
 			else if(is_button_pressed(1)){
@@ -92,12 +96,14 @@ void fsm_tuning_run(){
 		case TUNING_GREEN:
 			// TODO:
 			if(is_button_pressed(3)){
-				green_time += 500;
+				green_time += 1000;
 				sendingUART_SETTING();
+				setTimer8(TUNING_TIME);
 			}
 			if(is_button_pressed_1s(3)){
-				green_time -= 500;
+				green_time -= 1000;
 				sendingUART_SETTING();
+				setTimer8(TUNING_TIME);
 			}
 
 			green_time_2 = green_time;
@@ -114,12 +120,12 @@ void fsm_tuning_run(){
 			}
 
 			//SWITCH CASE
-			if(timer3_flag){
+			if(timer8_flag){
 				status = AUTO_INIT;
 			}
 			else if(is_button_pressed(2)){
 				status = TUNING_RED;
-				setTimer3(TUNING_TIME);
+				setTimer8(TUNING_TIME);
 				setTimer9(10);
 			}
 			else if(is_button_pressed(1)){
