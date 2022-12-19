@@ -71,6 +71,10 @@ extern int green_time_2;
 extern int buzzer_time;
 extern int buzzer_freq;
 
+extern int temp_yellow;
+extern int temp_green;
+extern int temp_red;
+
 // UART communiation
 #define MAX_SIZE_FOR_UART	30
 extern char buffer_rx[MAX_SIZE_FOR_UART];

@@ -15,7 +15,7 @@ void fsm_tuning_run(){
 			// TODO:
 			if(is_button_pressed(3)){
 //				red_time += 1000;
-				temp_red += 1000
+				temp_red += 1000;
 				sendingUART_SETTING();
 				setTimer8(TUNING_TIME);
 			}
