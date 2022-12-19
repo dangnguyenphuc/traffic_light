@@ -13,6 +13,7 @@
 void getKeyInput();
 unsigned char is_button_pressed(unsigned char button_number);
 unsigned char is_button_pressed_1s(unsigned char button_number);
+unsigned char is_button_double_click(unsigned char button_number);
 
 
 #endif /* INC_BUTTON_H_ */

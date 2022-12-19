@@ -16,13 +16,12 @@ void fsm_manual_run(){
 		setGreen(0);
 
 			// display value by UART
-		sendingUART_RUN();
+		sendingUART_MANUAL();
 
 
 			// if PEDESTRIAN PRESSED:
 		if(is_button_pressed(0)){
 			status_pedestrian = STOP_LIGHT;
-			setTimer1(PEDESTRIAN_TIME);
 			buzzer_freq = BUZZER_FREQ_START;
 			buzzer_time = BUZZER_CYCLE;
 		}
@@ -35,7 +34,7 @@ void fsm_manual_run(){
 
 		if (timer8_flag) {
 			status = AUTO_YELLOW1;
-			setTimer8(yellow_time);
+			setTimer3(yellow_time);
 			setTimer4(yellow_time);
 		}
 
@@ -58,7 +57,7 @@ void fsm_manual_run(){
 		setYellow(0);
 
 			// display value by UART
-		sendingUART_RUN();
+		sendingUART_MANUAL();
 
 			// if PEDESTRIAN PRESSED:
 		if(is_button_pressed(0)){
@@ -75,7 +74,7 @@ void fsm_manual_run(){
 
 		if (timer8_flag) {
 			status = AUTO_GREEN2;
-			setTimer8(red_time);
+			setTimer3(red_time);
 			setTimer4(green_time_2);
 		}
 
@@ -98,7 +97,7 @@ void fsm_manual_run(){
 		setGreen(1);
 
 			// display value by UART
-		sendingUART_RUN();
+		sendingUART_MANUAL();
 
 			// if PEDESTRIAN PRESSED:
 		if(is_button_pressed(0)){
@@ -116,7 +115,7 @@ void fsm_manual_run(){
 
 		if (timer8_flag) {
 			status = AUTO_YELLOW2;
-			setTimer8(yellow_time_2);
+			setTimer3(yellow_time_2);
 			setTimer3(yellow_time_2);
 		}
 
@@ -139,7 +138,7 @@ void fsm_manual_run(){
 		setYellow(1);
 
 			// display value by UART
-		sendingUART_RUN();
+		sendingUART_MANUAL();
 
 			// if PEDESTRIAN PRESSED:
 		if(is_button_pressed(0)){
@@ -156,7 +155,7 @@ void fsm_manual_run(){
 		}
 
 		if (timer8_flag) {
-			setTimer8(green_time);
+			setTimer3(green_time);
 			setTimer4(red_time_2);
 			status = AUTO_GREEN1;
 		}

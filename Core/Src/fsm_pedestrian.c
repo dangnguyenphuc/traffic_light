@@ -21,7 +21,7 @@ void fsm_pedestrian_run(){
 				buzzer_time = 0;
 				__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 0);
 			}
-			if(status == AUTO_GREEN2 || status == AUTO_YELLOW2){
+			if(status == AUTO_GREEN2 || status == AUTO_YELLOW2 || status == MAN_GREEN2 || status == MAN_YELLOW2){
 				status_pedestrian = WALK_LIGHT;
 				setTimer5(BUZZER_CYCLE);
 			}
@@ -30,7 +30,10 @@ void fsm_pedestrian_run(){
 		case WALK_LIGHT:
 			//TODO:
 			setPedestrian(1);
-			Buzzer();
+			if(status != MAN_GREEN2 || status!= MAN_YELLOW2 ){
+				Buzzer();
+			}
+
 
 
 			//SWITCH CASE
@@ -41,7 +44,7 @@ void fsm_pedestrian_run(){
 				buzzer_time = 0;
 				__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 0);
 			}
-			if(status == AUTO_GREEN1 || status == AUTO_YELLOW1){
+			if(status == AUTO_GREEN1 || status == AUTO_YELLOW1 || status == MAN_GREEN1 || status == MAN_YELLOW1){
 				status_pedestrian = STOP_LIGHT;
 				__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, 0);
 			}

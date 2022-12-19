@@ -1,6 +1,7 @@
-button.c:27:15:iKeyInput	16	static
-button.c:42:6:subKeyProcess1	16	static
-button.c:46:6:subKeyProcess2	16	static
-button.c:50:6:getKeyInput	16	static
-button.c:78:15:is_button_pressed	16	static
-button.c:88:15:is_button_pressed_1s	16	static
+button.c:31:15:iKeyInput	16	static
+button.c:46:6:subKeyProcess1	16	static
+button.c:59:6:subKeyProcess2	16	static
+button.c:63:6:getKeyInput	16	static
+button.c:102:15:is_button_pressed	16	static
+button.c:112:15:is_button_pressed_1s	16	static
+button.c:122:15:is_button_double_click	16	static

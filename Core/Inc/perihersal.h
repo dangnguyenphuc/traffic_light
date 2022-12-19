@@ -11,6 +11,7 @@
 #include "global.h"
 
 void sendingUART_RUN();
+void sendingUART_MANUAL();
 void sendingUART_SETTING();
 void Buzzer();
 

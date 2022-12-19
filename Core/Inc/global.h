@@ -54,10 +54,10 @@ extern int status_pedestrian;
 #define GREEN_TIME			7000
 #define YELLOW_TIME			3000
 
-#define MANUAL_TIME			10000
-#define TUNING_TIME			10000
+#define MANUAL_TIME			20000
+#define TUNING_TIME			20000
 #define PEDESTRIAN_TIME		20000
-#define BUZZER_CYCLE		1300
+#define BUZZER_CYCLE		2000
 #define BUZZER_FREQ_START	50
 
 extern int red_time;
