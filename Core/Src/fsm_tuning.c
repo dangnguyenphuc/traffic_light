@@ -16,12 +16,18 @@ void fsm_tuning_run(){
 			if(is_button_pressed(3)){
 //				red_time += 1000;
 				temp_red += 1000;
+
+				if(temp_red>999*1000) temp_red = 999*1000;
+
 				sendingUART_SETTING();
 				setTimer8(TUNING_TIME);
 			}
 			if(is_button_pressed_1s(3)){
 //				red_time -= 1000;
 				temp_red -= 1000;
+
+				if(temp_red <= 0) temp_red = 1000;
+
 				sendingUART_SETTING();
 				setTimer8(TUNING_TIME);
 			}
@@ -38,6 +44,15 @@ void fsm_tuning_run(){
 				setRed(2);	// Turn off
 			}
 
+			if(is_button_pressed(1)){
+				red_time = temp_red;
+				red_time_2 = temp_red;
+				yellow_time = temp_yellow;
+				yellow_time_2 = temp_yellow;
+				green_time = temp_green;
+				green_time_2 = temp_green;
+			}
+
 			//SWITCH CASE
 			if(timer8_flag){
 				status = AUTO_INIT;
@@ -47,14 +62,7 @@ void fsm_tuning_run(){
 				setTimer8(TUNING_TIME);
 				setTimer9(10);
 			}
-			else if(is_button_pressed(1)){
-				red_time = temp_red;
-				red_time_2 = temp_red;
-				yellow_time = temp_yellow;
-				yellow_time_2 = temp_yellow;
-				green_time = temp_green;
-				green_time_2 = temp_green;
-
+			else if(is_button_pressed_1s(1)){
 				status = AUTO_INIT;
 			}
 
@@ -87,6 +95,17 @@ void fsm_tuning_run(){
 				setRed(2);	// Turn off
 			}
 
+			if(is_button_pressed(1)){
+
+				red_time = temp_red;
+				red_time_2 = temp_red;
+				yellow_time = temp_yellow;
+				yellow_time_2 = temp_yellow;
+				green_time = temp_green;
+				green_time_2 = temp_green;
+
+			}
+
 			//SWITCH CASE
 			if(timer8_flag){
 				status = AUTO_INIT;
@@ -96,15 +115,7 @@ void fsm_tuning_run(){
 				setTimer8(TUNING_TIME);
 				setTimer9(10);
 			}
-			else if(is_button_pressed(1)){
-
-				red_time = temp_red;
-				red_time_2 = temp_red;
-				yellow_time = temp_yellow;
-				yellow_time_2 = temp_yellow;
-				green_time = temp_green;
-				green_time_2 = temp_green;
-
+			else if(is_button_pressed_1s(1)){
 				status = AUTO_INIT;
 			}
 
@@ -137,6 +148,17 @@ void fsm_tuning_run(){
 				setRed(2);	// Turn off
 			}
 
+			if(is_button_pressed(1)){
+
+				red_time = temp_red;
+				red_time_2 = temp_red;
+				yellow_time = temp_yellow;
+				yellow_time_2 = temp_yellow;
+				green_time = temp_green;
+				green_time_2 = temp_green;
+
+			}
+
 			//SWITCH CASE
 			if(timer8_flag){
 				status = AUTO_INIT;
@@ -146,15 +168,7 @@ void fsm_tuning_run(){
 				setTimer8(TUNING_TIME);
 				setTimer9(10);
 			}
-			else if(is_button_pressed(1)){
-
-				red_time = temp_red;
-				red_time_2 = temp_red;
-				yellow_time = temp_yellow;
-				yellow_time_2 = temp_yellow;
-				green_time = temp_green;
-				green_time_2 = temp_green;
-
+			else if(is_button_pressed_1s(1)){
 				status = AUTO_INIT;
 			}
 
