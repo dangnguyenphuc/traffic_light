@@ -52,6 +52,12 @@ void fsm_automatic_run(){
 
 			if (is_button_pressed(2)) {
 				status = TUNING_RED;
+
+				temp_red = red_time;
+				temp_yellow = yellow_time;
+				temp_green = green_time;
+
+
 				setTimer8(TUNING_TIME);
 				setTimer9(10);
 			}
@@ -90,6 +96,11 @@ void fsm_automatic_run(){
 
 			if (is_button_pressed(2)) {
 				status = TUNING_RED;
+
+				temp_red = red_time;
+				temp_yellow = yellow_time;
+				temp_green = green_time;
+
 				setTimer8(TUNING_TIME);
 				setTimer9(10);
 			}
@@ -128,6 +139,11 @@ void fsm_automatic_run(){
 
 			if (is_button_pressed(2)) {
 				status = TUNING_RED;
+
+				temp_red = red_time;
+				temp_yellow = yellow_time;
+				temp_green = green_time;
+
 				setTimer8(TUNING_TIME);
 				setTimer9(10);
 			}
@@ -168,11 +184,18 @@ void fsm_automatic_run(){
 
 			if (is_button_pressed(2)) {
 				status = TUNING_RED;
+
+				temp_red = red_time;
+				temp_yellow = yellow_time;
+				temp_green = green_time;
+
 				setTimer8(TUNING_TIME);
 				setTimer9(10);
 			}
 
 			break;
+
+
 		default:
 			break;
 	}

@@ -21,8 +21,18 @@ int red_time_2 = RED_TIME;
 int yellow_time_2 = YELLOW_TIME;
 int green_time_2 = GREEN_TIME;
 
-char buffer_rx[MAX_SIZE_FOR_UART] = {0,0,0,0,0,0,0,0,0,0};
-char buffer_tx[MAX_SIZE_FOR_UART] = {0,0,0,0,0,0,0,0,0,0};
+int temp_yellow=0;
+int temp_green=0;
+int temp_red=0;
+
+
+char buffer_rx[MAX_SIZE_FOR_UART] = {	0,0,0,0,0,0,0,0,0,0,
+										0,0,0,0,0,0,0,0,0,0,
+										0,0,0,0,0,0,0,0,0,0};
+
+char buffer_tx[MAX_SIZE_FOR_UART] = {	0,0,0,0,0,0,0,0,0,0,
+										0,0,0,0,0,0,0,0,0,0,
+										0,0,0,0,0,0,0,0,0,0};
 
 
 int buzzer_time = 0;

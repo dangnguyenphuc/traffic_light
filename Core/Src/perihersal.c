@@ -25,7 +25,7 @@ void sendingUART_RUN(){
 }
 
 void sendingUART_SETTING(){
-		HAL_UART_Transmit(&huart2, (void *)buffer_tx, sprintf (buffer_tx,"!RED:%d:YELLOW:%d:GREEN:%d#\r\n", red_time/1000, yellow_time/1000, green_time/1000), 1000);
+		HAL_UART_Transmit(&huart2, (void *)buffer_tx, sprintf (buffer_tx,"!RED:%d:YELLOW:%d:GREEN:%d#\r\n", temp_red/1000, temp_yellow/1000, temp_green/1000), 1000);
 }
 
 void Buzzer(){

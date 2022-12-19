@@ -14,17 +14,18 @@ void fsm_tuning_run(){
 		case TUNING_RED:
 			// TODO:
 			if(is_button_pressed(3)){
-				red_time += 1000;
+//				red_time += 1000;
+				temp_red += 1000
 				sendingUART_SETTING();
 				setTimer8(TUNING_TIME);
 			}
 			if(is_button_pressed_1s(3)){
-				red_time -= 1000;
+//				red_time -= 1000;
+				temp_red -= 1000;
 				sendingUART_SETTING();
 				setTimer8(TUNING_TIME);
 			}
 
-			red_time_2 = red_time;
 
 			// toogle LED and send Setting informations
 			if(timer9_flag){
@@ -47,6 +48,13 @@ void fsm_tuning_run(){
 				setTimer9(10);
 			}
 			else if(is_button_pressed(1)){
+				red_time = temp_red;
+				red_time_2 = temp_red;
+				yellow_time = temp_yellow;
+				yellow_time_2 = temp_yellow;
+				green_time = temp_green;
+				green_time_2 = temp_green;
+
 				status = AUTO_INIT;
 			}
 
@@ -55,17 +63,18 @@ void fsm_tuning_run(){
 		case TUNING_YELLOW:
 			// TODO:
 			if(is_button_pressed(3)){
-				yellow_time += 1000;
+//				yellow_time += 1000;
+				temp_yellow += 1000;
 				sendingUART_SETTING();
 				setTimer8(TUNING_TIME);
 			}
 			if(is_button_pressed_1s(3)){
-				yellow_time -= 1000;
+//				yellow_time -= 1000;
+				temp_yellow -= 1000;
 				sendingUART_SETTING();
 				setTimer8(TUNING_TIME);
 			}
 
-			yellow_time_2 = yellow_time;
 
 			// toogle LED and send Setting informations
 			if(timer9_flag){
@@ -88,6 +97,14 @@ void fsm_tuning_run(){
 				setTimer9(10);
 			}
 			else if(is_button_pressed(1)){
+
+				red_time = temp_red;
+				red_time_2 = temp_red;
+				yellow_time = temp_yellow;
+				yellow_time_2 = temp_yellow;
+				green_time = temp_green;
+				green_time_2 = temp_green;
+
 				status = AUTO_INIT;
 			}
 
@@ -96,17 +113,18 @@ void fsm_tuning_run(){
 		case TUNING_GREEN:
 			// TODO:
 			if(is_button_pressed(3)){
-				green_time += 1000;
+//				green_time += 1000;
+				temp_green += 1000;
 				sendingUART_SETTING();
 				setTimer8(TUNING_TIME);
 			}
 			if(is_button_pressed_1s(3)){
-				green_time -= 1000;
+//				green_time -= 1000;
+				temp_green -= 1000;
 				sendingUART_SETTING();
 				setTimer8(TUNING_TIME);
 			}
 
-			green_time_2 = green_time;
 
 			// toogle LED and send Setting informations
 			if(timer9_flag){
@@ -129,6 +147,14 @@ void fsm_tuning_run(){
 				setTimer9(10);
 			}
 			else if(is_button_pressed(1)){
+
+				red_time = temp_red;
+				red_time_2 = temp_red;
+				yellow_time = temp_yellow;
+				yellow_time_2 = temp_yellow;
+				green_time = temp_green;
+				green_time_2 = temp_green;
+
 				status = AUTO_INIT;
 			}
 
