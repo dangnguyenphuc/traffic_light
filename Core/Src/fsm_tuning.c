@@ -47,21 +47,16 @@ void fsm_tuning_run(){
 			if(is_button_pressed(1)){
 				red_time = temp_red;
 				red_time_2 = temp_red;
-				yellow_time = temp_yellow;
-				yellow_time_2 = temp_yellow;
-				green_time = temp_green;
-				green_time_2 = temp_green;
+			}
+			if(timer8_flag){
 				status = AUTO_INIT;
 			}
-			else if(timer8_flag){
-				status = AUTO_INIT;
-			}
-			else if(is_button_pressed(2)){
+			if(is_button_pressed(2)){
 				status = TUNING_YELLOW;
 				setTimer8(TUNING_TIME);
 				setTimer9(10);
 			}
-			else if(is_button_double_click(3)){
+			if(is_button_double_click(1)){
 				status = AUTO_INIT;
 			}
 
@@ -97,25 +92,18 @@ void fsm_tuning_run(){
 
 			//SWITCH CASE
 			if(is_button_pressed(1)){
-
-				red_time = temp_red;
-				red_time_2 = temp_red;
 				yellow_time = temp_yellow;
 				yellow_time_2 = temp_yellow;
-				green_time = temp_green;
-				green_time_2 = temp_green;
-				status = AUTO_INIT;
-
 			}
-			else if(timer8_flag){
+			if(timer8_flag){
 				status = AUTO_INIT;
 			}
-			else if(is_button_pressed(2)){
+			if(is_button_pressed(2)){
 				status = TUNING_GREEN;
 				setTimer8(TUNING_TIME);
 				setTimer9(10);
 			}
-			else if(is_button_double_click(3)){
+			if(is_button_double_click(1)){
 				status = AUTO_INIT;
 			}
 
@@ -151,27 +139,21 @@ void fsm_tuning_run(){
 
 			//SWITCH CASE
 			if(is_button_pressed(1)){
-
-				red_time = temp_red;
-				red_time_2 = temp_red;
-				yellow_time = temp_yellow;
-				yellow_time_2 = temp_yellow;
 				green_time = temp_green;
 				green_time_2 = temp_green;
-				status = AUTO_INIT;
-
 			}
 
-			else if(timer8_flag){
+			if(timer8_flag){
 				status = AUTO_INIT;
 			}
 
-			else if(is_button_pressed(2)){
+			if(is_button_pressed(2)){
 				status = TUNING_RED;
 				setTimer8(TUNING_TIME);
 				setTimer9(10);
 			}
-			else if(is_button_double_click(3)){
+			
+			if(is_button_double_click(1)){
 				status = AUTO_INIT;
 			}
 
